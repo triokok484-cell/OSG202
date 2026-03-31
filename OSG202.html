@@ -1540,18 +1540,17 @@
 
     // Nút gạt ngôn ngữ
     function toggleLanguage() {
-        state.isVietnamese = !state.isVietnamese;
-        updateLanguageTexts(); 
-        
-        // Re-render ngay lập tức luồng hiện tại
-        if (state.activeTab === 'flashcard') {
-            renderFlashcard();
-        } else {
-            if (state.quizPhase === 'active') renderQuestionCard();
-            if (state.quizPhase === 'result') renderResultView();
-            if (state.quizPhase === 'setup') updateMaxQuestions();
-        }
+    state.isVietnamese = !state.isVietnamese;
+    updateLanguageTexts(); // Đổi các chữ tĩnh (Trước, Sau, Chủ đề...)
+    
+    // QUAN TRỌNG: Vẽ lại nội dung động ngay lập tức
+    if (state.activeTab === 'flashcard') {
+        renderFlashcard(); 
+    } else {
+        if (state.quizPhase === 'active') renderQuestionCard();
+        if (state.quizPhase === 'result') renderResultView();
     }
+}
 
     function updateLanguageTexts() {
         const t = state.isVietnamese ? texts.vi : texts.en;
@@ -1604,27 +1603,29 @@
     function filterFlashcards() { const topic = document.getElementById('fc-topic-select').value; state.fcFilteredData = topic === 'all' ? [...quizData] : quizData.filter(q => q.topic === topic); state.fcIndex = 0; renderFlashcard(); }
     
     function renderFlashcard() {
-        const t = state.isVietnamese ? texts.vi : texts.en;
-        if (state.fcFilteredData.length === 0) {
-             document.getElementById('fc-content').innerHTML = "No questions available.";
-             document.getElementById('fc-answer').innerText = "";
-             document.getElementById('fc-explanation').innerHTML = "";
-             document.getElementById('fc-counter').innerText = `0 / 0`;
-             return;
-        }
-        const q = state.fcFilteredData[state.fcIndex]; 
-        const data = state.isVietnamese ? q.vi : q.en; 
-        const code = (q.en && q.en.code) ? `<pre>${q.en.code}</pre>` : '';
-        const shouldShuffle = document.getElementById('fc-shuffle-check').checked;
-        
-        document.querySelector('.flashcard').classList.remove('flipped');
-        
-        let html = `<div style="margin-bottom:15px; font-weight:bold;">Flashcard ${state.fcIndex + 1}</div><div style="font-size:12px; color:#999; margin-bottom:5px;">Topic: ${q.topic}</div><div>${data.question}</div>` + code;
-        let displayOptions = shouldShuffle ? shuffleArray(data.options) : data.options;
-        
-        html += `<ul style="text-align:left; margin-top:15px; padding-left:20px;">`;
-        displayOptions.forEach(o => html += `<li style="margin-bottom:8px;">${o.replace(/^[A-Z]\.\s*/, '')}</li>`);
-        html += `</ul>`;
+    if (state.fcFilteredData.length === 0) return;
+
+    const q = state.fcFilteredData[state.fcIndex];
+    
+    // Dòng này cực kỳ quan trọng: Chọn đúng sub-object vi hoặc en
+    const data = state.isVietnamese ? q.vi : q.en; 
+    
+    const t = state.isVietnamese ? texts.vi : texts.en;
+    const code = (q.en && q.en.code) ? `<pre>${q.en.code}</pre>` : '';
+    const shouldShuffle = document.getElementById('fc-shuffle-check').checked;
+    
+    document.querySelector('.flashcard').classList.remove('flipped');
+    
+    // Sử dụng biến "data" thay vì q.en
+    let html = `<div style="margin-bottom:15px; font-weight:bold;">Flashcard ${state.fcIndex + 1}</div>
+                <div style="font-size:12px; color:#999; margin-bottom:5px;">Topic: ${q.topic}</div>
+                <div style="font-size: 18px;">${data.question}</div>` + code;
+    
+    // Tiếp tục render options...
+    let displayOptions = shouldShuffle ? shuffleArray(data.options) : data.options;
+    html += `<ul style="text-align:left; margin-top:15px; padding-left:20px;">`;
+    displayOptions.forEach(o => html += `<li>${o.replace(/^[A-Z]\.\s*/, '')}</li>`);
+    html += `</ul>`;
         
         document.getElementById('fc-content').innerHTML = html;
         document.getElementById('fc-answer').innerText = data.answer;
