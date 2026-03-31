@@ -181,8 +181,10 @@
             background: #f0f0f0; border-radius: 50%;
             text-align: center; line-height: 24px; font-weight: bold;
         }
-        .options-list li.correct { border-color: var(--secondary-color); background: #d4edda; }
-        .options-list li.wrong { border-color: var(--danger-color); background: #f8d7da; }
+        .options-list li.correct { border-color: var(--secondary-color); background: #d4edda; color: #155724; }
+        .options-list li.correct::before { background: var(--secondary-color); color: white; }
+        .options-list li.wrong { border-color: var(--danger-color); background: #f8d7da; color: #721c24; }
+        .options-list li.wrong::before { background: var(--danger-color); color: white; }
         .options-list li.disabled { pointer-events: none; }
 
         .explanation-box {
@@ -223,7 +225,6 @@
 
     <div class="main-container">
         <div class="content-area">
-            <!-- FLASHCARD VIEW -->
             <div id="flashcard-view">
                 <div class="controls-group">
                     <div class="control-item">
@@ -234,15 +235,15 @@
                 <div class="flashcard-wrapper">
                     <div class="flashcard" id="fc-card" onclick="this.classList.toggle('flipped')">
                         <div class="card-face card-front">
-                            <small id="fc-flip-hint">Click thẻ để lật</small>
+                            <small id="fc-flip-hint" style="color: #888; margin-bottom: 10px;">Click thẻ để lật</small>
                             <div id="fc-content"></div>
                         </div>
                         <div class="card-face card-back">
-                            <h3 id="txt-fc-ans-title">Đáp Án</h3>
+                            <h3 id="txt-fc-ans-title" style="color: var(--secondary-color); margin-bottom: 10px;">Đáp Án</h3>
                             <div id="fc-answer" style="font-size: 20px; font-weight: bold; margin-bottom: 20px;"></div>
                             <div style="text-align: left; width: 100%;">
                                 <strong id="txt-fc-exp-title">Giải thích:</strong>
-                                <div id="fc-explanation"></div>
+                                <div id="fc-explanation" style="margin-top: 8px;"></div>
                             </div>
                         </div>
                     </div>
@@ -254,57 +255,63 @@
                 </div>
             </div>
 
-            <!-- QUIZ SETUP -->
-            <div id="quiz-setup" class="hidden" style="text-align: center; background: white; padding: 40px; border-radius: 12px;">
+            <div id="quiz-setup" class="hidden" style="text-align: center; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 500px; margin: 0 auto;">
                 <h2 id="txt-setup-title">Cấu hình luyện tập</h2>
-                <div class="control-item" style="margin-bottom: 20px;">
-                    <label id="lbl-quiz-topic">Chủ đề:</label>
-                    <select id="quiz-topic-select" onchange="updateMaxQuestions()"></select>
+                <div class="controls-group" style="flex-direction: column; background: transparent; box-shadow: none;">
+                    <div class="control-item" style="width:100%; justify-content: space-between;">
+                        <label id="lbl-quiz-topic">Chủ đề:</label>
+                        <select id="quiz-topic-select" onchange="updateMaxQuestions()"></select>
+                    </div>
+                    <div class="control-item" style="width:100%; justify-content: space-between;">
+                        <label id="lbl-quiz-shuffle">Xáo trộn đáp án:</label>
+                        <input type="checkbox" id="quiz-shuffle-check">
+                    </div>
                 </div>
-                <p><span id="txt-total-lbl">Khả dụng:</span> <span id="total-qs-count">0</span></p>
-                <input type="number" id="quiz-count-input" value="10" style="padding: 10px; width: 80px; text-align: center;">
-                <br><br>
+                <p><span id="txt-total-lbl">Khả dụng:</span> <span id="total-qs-count" style="font-weight:bold; color:var(--primary-color); font-size:18px;">0</span></p>
+                <div style="margin: 20px 0;">
+                    <label id="txt-q-count" style="display: block; margin-bottom: 10px;">Số lượng câu làm:</label>
+                    <input type="number" id="quiz-count-input" value="10" min="1" style="padding: 10px; width: 100px; text-align: center; border: 2px solid #ddd; border-radius: 8px; font-weight: bold; font-size: 16px;">
+                </div>
                 <button class="start-btn" onclick="startQuiz()" id="btn-start-quiz">Bắt đầu 🚀</button>
             </div>
 
-            <!-- QUIZ ACTIVE -->
             <div id="quiz-active" class="hidden">
                 <div class="question-card" id="q-card">
-                    <div style="display:flex; justify-content: space-between; margin-bottom: 10px; color: #666;">
+                    <div style="display:flex; justify-content: space-between; margin-bottom: 15px; color: #666; border-bottom: 1px solid #eee; padding-bottom: 10px;">
                         <span id="quiz-progress-text"></span>
-                        <strong id="txt-mode-lbl">Luyện tập</strong>
+                        <strong id="txt-mode-lbl" style="color:var(--primary-color);">Luyện tập</strong>
                     </div>
-                    <div id="q-text" style="font-size: 18px; margin-bottom: 20px;"></div>
+                    <div id="q-text" style="font-size: 18px; margin-bottom: 20px; line-height: 1.5;"></div>
                     <ul class="options-list" id="q-options"></ul>
                     <div class="explanation-box" id="q-explanation"></div>
                 </div>
                 <div style="display:flex; justify-content: space-between;">
                     <button class="nav-btn secondary" onclick="navQuiz(-1)" id="btn-q-prev">Trước</button>
-                    <button class="submit-btn" onclick="finishQuiz()" id="btn-q-submit">Nộp bài</button>
+                    <button class="submit-btn" onclick="finishQuiz()" id="btn-q-submit" style="background: var(--secondary-color);">Nộp bài</button>
                     <button class="nav-btn" onclick="navQuiz(1)" id="btn-q-next">Sau</button>
                 </div>
             </div>
 
-            <!-- RESULT -->
-            <div id="quiz-result" class="hidden" style="text-align: center;">
-                <div class="question-card">
+            <div id="quiz-result" class="hidden">
+                <div class="result-header" style="text-align: center; background: white; padding: 30px; border-radius: var(--border-radius); margin-bottom: 20px;">
                     <h2 id="txt-res-title">Kết quả</h2>
-                    <div style="font-size: 48px; font-weight: bold; color: var(--primary-color);" id="score-display">0/0</div>
-                    <button class="start-btn" onclick="resetQuiz()" style="margin-top: 20px;">Làm lại 🔄</button>
+                    <div style="font-size: 48px; font-weight: bold; color: var(--primary-color); margin: 10px 0;" id="score-display">0/0</div>
+                    <button class="start-btn" onclick="resetQuiz()" id="btn-restart" style="margin-top: 10px;">Làm lại 🔄</button>
                 </div>
                 <div id="review-list"></div>
             </div>
         </div>
 
-        <!-- SIDEBAR -->
         <div class="quiz-sidebar hidden" id="quiz-sidebar">
-            <h4 id="txt-map-title">Bản đồ</h4>
+            <h4 id="txt-map-title" style="margin-top: 0;">Bản đồ</h4>
             <div class="question-grid" id="map-grid"></div>
         </div>
     </div>
 
 <script>
-    // 1. DỮ LIỆU (Đã gộp Batch 1 -> Batch 4)
+    // 1. DỮ LIỆU ĐÃ FIX LỖI
+    // LUÔN NHỚ: Các object câu hỏi phải nằm trong cặp ngoặc vuông [ ] của mảng quizData.
+    // Giữa các object CẦN CÓ DẤU PHẨY (,)
     const quizData = [
         {
         "id": 1,
@@ -2548,10 +2555,13 @@
                 "explanation": "POST (Power-On Self-Test) là quá trình tự kiểm tra thiết bị khi vừa bật máy. Nhiệm vụ của nó là rà soát nhanh RAM, Bàn phím, Đĩa cứng... xem có lỗi phần cứng nào nghiêm trọng trước khi mồi hệ điều hành."
             }
         }
-        // ... (Tôi đã lược bớt để file nhẹ, em có thể tự thêm object câu hỏi vào đây)
+        // ===== BẠN HÃY DÁN TIẾP CÁC CÂU TỪ 4 ĐẾN 140 VÀO ĐÂY =====
+        // NHỚ: THÊM DẤU PHẨY (,) VÀO CUỐI KHỐI NGOẶC NHỌN } TRƯỚC KHI DÁN CÂU TIẾP THEO
     ];
 
-    // 2. STATE QUẢN LÝ
+    // ======================================================
+    // LOGIC CODE ĐÃ TỐI ƯU CỦA "GIÁO SƯ"
+    // ======================================================
     let state = {
         isVN: true,
         tab: 'flashcard',
@@ -2560,31 +2570,34 @@
         quizPhase: 'setup',
         activeQs: [],
         answers: {},
-        qIdx: 0
+        qIdx: 0,
+        quizShuffle: false
     };
 
     const UI = {
         vi: { 
             tabFc: "📚 Flashcards", tabQuiz: "📝 Luyện tập", topic: "Chủ đề:", hint: "Click thẻ để lật", 
             ansTitle: "Đáp Án", expTitle: "Giải thích:", prev: "Trước", next: "Sau", 
-            setup: "Cấu hình", total: "Khả dụng:", start: "Bắt đầu 🚀", progress: "Câu",
-            mode: "Luyện tập", submit: "Nộp bài", res: "Kết quả", map: "Bản đồ"
+            setup: "Cấu hình Luyện Tập", total: "Khả dụng:", start: "Bắt đầu 🚀", progress: "Câu",
+            mode: "Luyện tập", submit: "Nộp bài", res: "Kết quả", map: "Bản đồ", shuffle: "Xáo trộn đáp án:",
+            restart: "Làm lại 🔄", noExp: "Chưa có giải thích chi tiết."
         },
         en: { 
             tabFc: "📚 Flashcards", tabQuiz: "📝 Quiz", topic: "Topic:", hint: "Click card to flip", 
             ansTitle: "Answer", expTitle: "Explanation:", prev: "Prev", next: "Next", 
             setup: "Quiz Setup", total: "Available:", start: "Start 🚀", progress: "Question",
-            mode: "Practice", submit: "Submit", res: "Result", map: "Map"
+            mode: "Practice", submit: "Submit", res: "Result", map: "Map", shuffle: "Shuffle answers:",
+            restart: "Restart 🔄", noExp: "No explanation available."
         }
     };
+    const labelChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-    // 3. LOGIC HÀM
     function init() {
         const topics = [...new Set(quizData.map(q => q.topic))].sort();
         const fcSel = document.getElementById('fc-topic-select');
         const qzSel = document.getElementById('quiz-topic-select');
         
-        fcSel.innerHTML = qzSel.innerHTML = '<option value="all">Tất cả</option>';
+        fcSel.innerHTML = qzSel.innerHTML = '<option value="all">Tất cả (All)</option>';
         topics.forEach(t => {
             const opt = `<option value="${t}">${t}</option>`;
             fcSel.innerHTML += opt; qzSel.innerHTML += opt;
@@ -2598,7 +2611,10 @@
         state.isVN = !state.isVN;
         updateLangUI();
         if (state.tab === 'flashcard') renderFlashcard();
-        else if (state.quizPhase === 'active') renderQuestion();
+        else {
+            if (state.quizPhase === 'active') renderQuestion();
+            if (state.quizPhase === 'result') renderResultView();
+        }
     }
 
     function updateLangUI() {
@@ -2606,13 +2622,14 @@
         document.getElementById('btn-tab-fc').innerText = t.tabFc;
         document.getElementById('btn-tab-quiz').innerText = t.tabQuiz;
         document.getElementById('lbl-fc-topic').innerText = t.topic;
+        document.getElementById('lbl-quiz-topic').innerText = t.topic;
         document.getElementById('fc-flip-hint').innerText = t.hint;
         document.getElementById('txt-fc-ans-title').innerText = t.ansTitle;
         document.getElementById('txt-fc-exp-title').innerText = t.expTitle;
         document.getElementById('btn-fc-prev').innerText = t.prev;
         document.getElementById('btn-fc-next').innerText = t.next;
         document.getElementById('txt-setup-title').innerText = t.setup;
-        document.getElementById('lbl-quiz-topic').innerText = t.topic;
+        document.getElementById('lbl-quiz-shuffle').innerText = t.shuffle;
         document.getElementById('txt-total-lbl').innerText = t.total;
         document.getElementById('btn-start-quiz').innerText = t.start;
         document.getElementById('txt-mode-lbl').innerText = t.mode;
@@ -2621,6 +2638,7 @@
         document.getElementById('btn-q-next').innerText = t.next;
         document.getElementById('txt-res-title').innerText = t.res;
         document.getElementById('txt-map-title').innerText = t.map;
+        document.getElementById('btn-restart').innerText = t.restart;
         updateMaxQuestions();
     }
 
@@ -2635,7 +2653,8 @@
         document.getElementById('quiz-sidebar').classList.toggle('hidden', t !== 'quiz' || state.quizPhase === 'setup');
     }
 
-    // FLASHCARD LOGIC
+    function shuffleArray(arr) { let a = [...arr]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
     function filterFlashcards() {
         const top = document.getElementById('fc-topic-select').value;
         state.fcData = top === 'all' ? quizData : quizData.filter(q => q.topic === top);
@@ -2644,13 +2663,20 @@
     }
 
     function renderFlashcard() {
-        if (!state.fcData.length) return;
+        const t = state.isVN ? UI.vi : UI.en;
+        if (!state.fcData.length) {
+            document.getElementById('fc-content').innerHTML = "No data.";
+            document.getElementById('fc-counter').innerText = "0 / 0";
+            return;
+        }
         const q = state.fcData[state.fcIdx];
         const data = state.isVN ? q.vi : q.en;
         document.getElementById('fc-card').classList.remove('flipped');
-        document.getElementById('fc-content').innerHTML = `<strong>[${q.topic}]</strong><br><br>${data.question}`;
+        
+        // SỬ DỤNG .innerHTML ĐỂ HIỂN THỊ ĐÚNG THẺ <br>
+        document.getElementById('fc-content').innerHTML = `<strong style="color:var(--primary-color);">[${q.topic || 'General'}]</strong><br><br>${data.question}`;
         document.getElementById('fc-answer').innerText = data.answer;
-        document.getElementById('fc-explanation').innerText = data.explanation;
+        document.getElementById('fc-explanation').innerHTML = data.explanation || t.noExp;
         document.getElementById('fc-counter').innerText = `${state.fcIdx + 1} / ${state.fcData.length}`;
     }
 
@@ -2659,18 +2685,28 @@
         if (n >= 0 && n < state.fcData.length) { state.fcIdx = n; renderFlashcard(); }
     }
 
-    // QUIZ LOGIC
     function updateMaxQuestions() {
         const top = document.getElementById('quiz-topic-select').value;
         const count = top === 'all' ? quizData.length : quizData.filter(q => q.topic === top).length;
         document.getElementById('total-qs-count').innerText = count;
+        
+        const input = document.getElementById('quiz-count-input');
+        input.max = count;
+        if(parseInt(input.value) > count) input.value = count;
     }
 
     function startQuiz() {
         const top = document.getElementById('quiz-topic-select').value;
         const num = parseInt(document.getElementById('quiz-count-input').value);
+        state.quizShuffle = document.getElementById('quiz-shuffle-check').checked;
+        
         let pool = top === 'all' ? [...quizData] : quizData.filter(q => q.topic === top);
+        if(pool.length === 0 || num <= 0) return;
+
+        // Trộn câu hỏi
         state.activeQs = pool.sort(() => 0.5 - Math.random()).slice(0, num);
+        state.activeQs.forEach(q => q.shuffledOptions = null); // Reset lựa chọn
+
         state.quizPhase = 'active'; state.qIdx = 0; state.answers = {};
         switchTab('quiz'); renderQuestion(); renderMap();
     }
@@ -2681,35 +2717,48 @@
         const t = state.isVN ? UI.vi : UI.en;
         
         document.getElementById('quiz-progress-text').innerText = `${t.progress} ${state.qIdx + 1}/${state.activeQs.length}`;
-        document.getElementById('q-text').innerText = data.question;
+        // SỬ DỤNG .innerHTML ĐỂ HIỂN THỊ THẺ <br>
+        document.getElementById('q-text').innerHTML = data.question;
         
-        const card = document.getElementById('q-card');
-        card.style.border = q.highlight ? "3px solid orange" : "none";
-
         const ul = document.getElementById('q-options'); ul.innerHTML = '';
         const isDone = !!state.answers[state.qIdx];
 
-        data.options.forEach((opt, i) => {
+        const correctPrefix = data.answer.trim().charAt(0);
+
+        if (!q.shuffledOptions) {
+            let opts = [...data.options];
+            if (state.quizShuffle) opts = shuffleArray(opts);
+            q.shuffledOptions = opts;
+        }
+
+        q.shuffledOptions.forEach((opt, i) => {
             const li = document.createElement('li');
-            const label = String.fromCharCode(65 + i);
+            const label = labelChars[i];
+            const isThisOptionCorrect = opt.trim().startsWith(correctPrefix);
+
             li.innerText = opt.replace(/^[A-Z]\.\s*/, '');
             li.setAttribute('data-label', label);
             
             if (isDone) {
                 li.classList.add('disabled');
-                if (opt.startsWith(data.answer.charAt(0))) li.classList.add('correct');
-                if (state.answers[state.qIdx].choice === label && !state.answers[state.qIdx].isCorrect) li.classList.add('wrong');
+                if (isThisOptionCorrect) li.classList.add('correct');
+                if (state.answers[state.qIdx].choice === label && !isThisOptionCorrect) li.classList.add('wrong');
             } else {
-                li.onclick = () => selectOption(label, opt.startsWith(data.answer.charAt(0)));
+                li.onclick = () => selectOption(label, isThisOptionCorrect);
             }
             ul.appendChild(li);
         });
 
         const exp = document.getElementById('q-explanation');
         if (isDone) {
+            const ansObj = state.answers[state.qIdx];
+            const statusText = ansObj.isCorrect ? (state.isVN ? "✅ Chính xác!" : "✅ Correct!") : (state.isVN ? "❌ Sai rồi!" : "❌ Wrong!");
             exp.style.display = 'block';
-            exp.innerHTML = `<strong>Giải thích:</strong> ${data.explanation}`;
-        } else exp.style.display = 'none';
+            exp.style.borderLeftColor = ansObj.isCorrect ? 'var(--secondary-color)' : 'var(--danger-color)';
+            exp.innerHTML = `<strong style="color:${ansObj.isCorrect?'green':'red'};">${statusText}</strong><br><br><strong>${t.expTitle}</strong> ${data.explanation || t.noExp}`;
+        } else {
+            exp.style.display = 'none';
+        }
         
         renderMap();
     }
@@ -2738,10 +2787,43 @@
     }
 
     function finishQuiz() {
+        if (!confirm(state.isVN ? "Bạn có chắc muốn nộp bài?" : "Are you sure you want to submit?")) return;
         state.quizPhase = 'result';
         switchTab('quiz');
         let score = Object.values(state.answers).filter(a => a.isCorrect).length;
         document.getElementById('score-display').innerText = `${score} / ${state.activeQs.length}`;
+        renderResultView();
+    }
+
+    function renderResultView() {
+        const t = state.isVN ? UI.vi : UI.en;
+        const list = document.getElementById('review-list'); list.innerHTML = '';
+        
+        state.activeQs.forEach((q, i) => {
+            const data = state.isVN ? q.vi : q.en; 
+            const ans = state.answers[i];
+            const card = document.createElement('div'); card.className = 'question-card';
+            
+            let status = ans ? (ans.isCorrect ? `<span style="color:green;float:right;">✔</span>` : `<span style="color:red;float:right;">✘</span>`) : `<span style="color:gray;float:right;">⚪</span>`;
+            let html = `<div style="margin-bottom:10px; color:#555;">${t.progress} ${i + 1} ${status}</div><div style="font-weight:500;">${data.question}</div>`;
+            
+            html += `<ul class="options-list" style="margin-top:15px;">`;
+            const correctPrefix = data.answer.trim().charAt(0);
+            
+            (q.shuffledOptions || data.options).forEach((opt, optIdx) => {
+                let cls = ''; 
+                const label = labelChars[optIdx];
+                const isCorrect = opt.trim().startsWith(correctPrefix);
+                
+                if (isCorrect) cls = 'correct';
+                if (ans && !ans.isCorrect && ans.choice === label) cls += ' wrong';
+                
+                html += `<li class="${cls}" data-label="${label}">${opt.replace(/^[A-Z]\.\s*/, '')}</li>`;
+            });
+            
+            html += `</ul><div class="explanation-box" style="display:block; background:#f9f9f9; border-left-color:#666;"><strong>${data.answer}</strong><br>${data.explanation || t.noExp}</div>`;
+            card.innerHTML = html; list.appendChild(card);
+        });
     }
 
     function resetQuiz() {
