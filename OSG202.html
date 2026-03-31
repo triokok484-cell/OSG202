@@ -1454,6 +1454,1288 @@
             "explanation": ""
         }
     }
+// ... (Dán tiếp nối vào sau câu 60 của mảng quizData)
+        {
+            "id": 61,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "A________is a group of related records that contains information to be used by specific application programs to generate reports.",
+                "options": ["A. Field", "B. Record group", "C. File", "D. Directory"],
+                "answer": "C. File",
+                "explanation": "In file system hierarchies, a file is fundamentally a collection of related records or data bytes treated as a single entity."
+            },
+            "vi": {
+                "question": "Một ________ là một nhóm các bản ghi liên quan chứa thông tin được sử dụng bởi các chương trình ứng dụng cụ thể để tạo báo cáo.",
+                "options": ["A. Field (Trường)", "B. Record group (Nhóm bản ghi)", "C. File (Tệp)", "D. Directory (Thư mục)"],
+                "answer": "C. File (Tệp)",
+                "explanation": "Trong hệ thống lưu trữ, một tệp (file) về cơ bản là một tập hợp các bản ghi hoặc byte dữ liệu có liên quan được xử lý như một thực thể duy nhất."
+            }
+        },
+        {
+            "id": 62,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "If the transport speed for a magnetic tape is 200 inches per second and the density is 1600 byte per inch, a total of_______bytes can be transferred in one second.",
+                "options": ["A. 3,200", "B. 32,000", "C. 320,000", "D. 3,200,000"],
+                "answer": "C. 320,000",
+                "explanation": "Transfer rate = Speed * Density = 200 inches/sec * 1600 bytes/inch = 320,000 bytes/sec."
+            },
+            "vi": {
+                "question": "Nếu tốc độ di chuyển của băng từ là 200 inch mỗi giây và mật độ là 1600 byte mỗi inch, tổng cộng _______ byte có thể được truyền trong một giây.",
+                "options": ["A. 3,200", "B. 32,000", "C. 320,000", "D. 3,200,000"],
+                "answer": "C. 320,000",
+                "explanation": "Tốc độ truyền (Transfer rate) = Tốc độ băng * Mật độ = 200 inch/giây * 1600 byte/inch = 320,000 byte/giây."
+            }
+        },
+        {
+            "id": 63,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "Consider an i-node, which contains 10 direct addresses of 4 bytes each and all disk blocks are 1 KB. Also consider that the i-node contains an additional \"single indirect address\" that is used for containing more disk block addresses. What is the largest possible file?",
+                "options": ["A. 262 KB", "B. 264 KB", "C. 266 KB", "D. 268 KB"],
+                "answer": "C. 266 KB",
+                "explanation": "Direct blocks = 10 * 1KB = 10KB. One single indirect block of 1KB can hold (1KB / 4 bytes) = 256 addresses. 256 * 1KB = 256KB. Total max size = 10KB + 256KB = 266KB."
+            },
+            "vi": {
+                "question": "Xem xét một i-node chứa 10 địa chỉ trực tiếp (mỗi địa chỉ 4 byte) và tất cả các khối đĩa (disk block) đều là 1 KB. I-node cũng chứa thêm một \"địa chỉ gián tiếp đơn\" để chứa thêm địa chỉ khối đĩa. Kích thước tệp lớn nhất có thể là bao nhiêu?",
+                "options": ["A. 262 KB", "B. 264 KB", "C. 266 KB", "D. 268 KB"],
+                "answer": "C. 266 KB",
+                "explanation": "10 khối trực tiếp = 10 * 1KB = 10KB. Một khối gián tiếp 1KB có thể chứa (1KB / 4 byte) = 256 địa chỉ. 256 * 1KB = 256KB. Tổng kích thước tối đa = 10KB + 256KB = 266KB."
+            }
+        },
+        {
+            "id": 64,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "In a directed graph used to model deadlock,________represents deadlock.",
+                "options": ["A. Solid arrow", "B. Dashed arrow", "C. Cycle", "D. Any path"],
+                "answer": "C. Cycle",
+                "explanation": "A cycle in a resource allocation graph indicates a circular wait condition, which is a fundamental requirement for a deadlock to occur."
+            },
+            "vi": {
+                "question": "Trong đồ thị có hướng dùng để mô hình hóa deadlock, ________ đại diện cho deadlock.",
+                "options": ["A. Mũi tên nét liền", "B. Mũi tên nét đứt", "C. Chu trình (Cycle)", "D. Bất kỳ đường đi nào"],
+                "answer": "C. Chu trình (Cycle)",
+                "explanation": "Một chu trình (vòng lặp khép kín) trong đồ thị cấp phát tài nguyên chỉ ra sự chờ đợi vòng tròn, điều kiện cốt lõi để xảy ra deadlock."
+            }
+        },
+        {
+            "id": 65,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "Which of the following statements is not a task of file management of OS?",
+                "options": ["A. Create, manipulate and delete File/Directory", "B. Mapping files onto secondary storage", "C. File backup on stable (nonvolatile) storage media.", "D. Allocate and deallocate memory space as needed"],
+                "answer": "D. Allocate and deallocate memory space as needed",
+                "explanation": "Allocating and deallocating memory space is the responsibility of the Memory Management unit (like RAM management), not File Management."
+            },
+            "vi": {
+                "question": "Phát biểu nào sau đây không phải là nhiệm vụ của quản lý tệp (file management) trong HĐH?",
+                "options": ["A. Tạo, thao tác và xóa Tệp/Thư mục", "B. Ánh xạ tệp lên bộ nhớ thứ cấp", "C. Sao lưu tệp trên các phương tiện lưu trữ ổn định.", "D. Cấp phát và thu hồi không gian bộ nhớ khi cần"],
+                "answer": "D. Cấp phát và thu hồi không gian bộ nhớ khi cần",
+                "explanation": "Cấp phát và thu hồi không gian bộ nhớ (RAM) là nhiệm vụ của Quản lý bộ nhớ (Memory Management), không thuộc Quản lý tệp (File Management)."
+            }
+        },
+        {
+            "id": 66,
+            "topic": "Memory Management",
+            "en": {
+                "question": "_searches the entire list, from beginning to end, and takes the smallest hole that is adequate.",
+                "options": ["A. Best fit", "B. First fit", "C. Worst fit", "D. Next fit"],
+                "answer": "A. Best fit",
+                "explanation": "The Best Fit memory allocation algorithm searches the entire list to find the smallest available hole that fits the process, minimizing wasted leftover space."
+            },
+            "vi": {
+                "question": "Thuật toán nào tìm kiếm toàn bộ danh sách, từ đầu đến cuối, và lấy khoảng trống nhỏ nhất đủ để đáp ứng?",
+                "options": ["A. Best fit", "B. First fit", "C. Worst fit", "D. Next fit"],
+                "answer": "A. Best fit",
+                "explanation": "Thuật toán Best Fit (Vừa nhất) tìm kiếm toàn bộ danh sách để tìm khoảng trống nhỏ nhất vừa đủ cho tiến trình, giúp giảm thiểu không gian thừa bị lãng phí."
+            }
+        },
+        {
+            "id": 67,
+            "topic": "OS Overview & Architecture",
+            "en": {
+                "question": "The period between interruption in the Clock of the computer is called:",
+                "options": ["A. Clock ticks", "B. Clock time interval", "C. Clock time counter", "D. None of the other choices"],
+                "answer": "A. Clock ticks",
+                "explanation": "The hardware clock generates periodic interrupts at a specific frequency. Each of these interruptions is referred to as a 'clock tick'."
+            },
+            "vi": {
+                "question": "Khoảng thời gian giữa các lần ngắt trong Đồng hồ (Clock) của máy tính được gọi là:",
+                "options": ["A. Clock ticks (Nhịp đồng hồ)", "B. Khoảng thời gian đồng hồ", "C. Bộ đếm thời gian đồng hồ", "D. Không có lựa chọn nào đúng"],
+                "answer": "A. Clock ticks (Nhịp đồng hồ)",
+                "explanation": "Đồng hồ phần cứng tạo ra các ngắt định kỳ ở một tần số cụ thể. Mỗi lần ngắt này được gọi là một 'clock tick' (nhịp đồng hồ)."
+            }
+        },
+        {
+            "id": 68,
+            "topic": "Memory Management",
+            "en": {
+                "question": "Which of these statements about the algorithm \"Next fit\" is true?",
+                "options": ["A. Memory Manager scans along the list of segments until it finds a hole that is big enough.", "B. Memory Manager starting searching the list of segments from the place where it left off last time.", "C. Memory Manager searches the entire list of segments from beginning to end and take smallest hole that is adequate.", "D. None of the other choices"],
+                "answer": "B. Memory Manager starting searching the list of segments from the place where it left off last time.",
+                "explanation": "Next fit is a variation of first fit. Instead of always starting from the beginning, it remembers the last allocation point and continues searching from there."
+            },
+            "vi": {
+                "question": "Phát biểu nào sau đây về thuật toán \"Next fit\" là đúng?",
+                "options": ["A. Trình quản lý bộ nhớ quét dọc theo danh sách các phân đoạn cho đến khi tìm thấy khoảng trống đủ lớn.", "B. Trình quản lý bộ nhớ bắt đầu tìm kiếm danh sách từ vị trí nó đã dừng lại ở lần phân bổ trước.", "C. Trình quản lý bộ nhớ tìm kiếm toàn bộ danh sách từ đầu đến cuối và lấy khoảng trống nhỏ nhất đủ lớn.", "D. Không có lựa chọn nào đúng"],
+                "answer": "B. Trình quản lý bộ nhớ bắt đầu tìm kiếm danh sách từ vị trí nó đã dừng lại ở lần phân bổ trước.",
+                "explanation": "Next fit là biến thể của First fit. Thay vì luôn bắt đầu lại từ đầu danh sách, nó ghi nhớ vị trí cấp phát cuối cùng và tiếp tục tìm kiếm từ đó."
+            }
+        },
+        {
+            "id": 69,
+            "topic": "Memory Management",
+            "en": {
+                "question": "The________policy is based on the theory that the best page to remove is the one that has been in memory the longest.",
+                "options": ["A. NRU", "B. LRU", "C. FIFO", "D. LIFO"],
+                "answer": "C. FIFO",
+                "explanation": "FIFO (First-In, First-Out) replaces the page that was brought into memory first (i.e., has been there the longest)."
+            },
+            "vi": {
+                "question": "Chính sách ________ dựa trên lý thuyết rằng trang tốt nhất để xóa bỏ là trang đã nằm trong bộ nhớ lâu nhất.",
+                "options": ["A. NRU", "B. LRU", "C. FIFO", "D. LIFO"],
+                "answer": "C. FIFO",
+                "explanation": "FIFO (First-In, First-Out) hoạt động theo nguyên tắc thay thế trang được đưa vào bộ nhớ sớm nhất (tức là ở trong bộ nhớ lâu nhất)."
+            }
+        },
+        {
+            "id": 70,
+            "topic": "Process & Threads",
+            "en": {
+                "question": "Which of the following is not correct about user-level threads?",
+                "options": ["A. User-level threads are more efficient than kernel threads, in the sense that they do not need kernel calls to switch among threads", "B. User-level threads cannot be preempted by clock interrupts unless the whole process' quantum has been used up", "C. With user-level threads, customized scheduling algorithms cannot be implemented", "D. If one user-level thread makes a blocking system call, the system will block the entire process (which contains that user-level thread)"],
+                "answer": "C. With user-level threads, customized scheduling algorithms cannot be implemented",
+                "explanation": "Statement C is false. One of the main advantages of user-level threads is that each process can easily implement its own customized scheduling algorithm without kernel intervention."
+            },
+            "vi": {
+                "question": "Điều nào sau đây KHÔNG đúng về luồng cấp người dùng (user-level threads)?",
+                "options": ["A. Luồng cấp người dùng hiệu quả hơn luồng hạt nhân vì không cần gọi kernel để chuyển đổi giữa các luồng.", "B. Không thể bị ngắt bởi ngắt đồng hồ trừ khi hết thời gian lượng tử của toàn bộ tiến trình.", "C. Với luồng cấp người dùng, KHÔNG THỂ triển khai các thuật toán lập lịch tùy chỉnh.", "D. Nếu một luồng gọi system call chặn (blocking), hệ thống sẽ chặn toàn bộ tiến trình."],
+                "answer": "C. Với luồng cấp người dùng, KHÔNG THỂ triển khai các thuật toán lập lịch tùy chỉnh.",
+                "explanation": "Phát biểu C sai. Một trong những lợi thế lớn nhất của luồng cấp người dùng là mỗi tiến trình có thể tự do viết và triển khai thuật toán lập lịch tùy chỉnh của riêng mình mà không cần HĐH can thiệp."
+            }
+        },
+        {
+            "id": 71,
+            "topic": "OS Overview & Architecture",
+            "en": {
+                "question": "The four main structural elements of a computer system are:",
+                "options": ["A. Processor, Registers, I/O Modules, Main Memory", "B. Processor, Registers, Main Memory, System Bus", "C. Processor, Main Memory, I/O Modules, System Bus", "D. None of the other choices"],
+                "answer": "C. Processor, Main Memory, I/O Modules, System Bus",
+                "explanation": "At the top level, a computer consists of the Processor (CPU), Main Memory, I/O Modules, and the System Bus that connects them all together."
+            },
+            "vi": {
+                "question": "Bốn thành phần cấu trúc chính của một hệ thống máy tính là:",
+                "options": ["A. Bộ xử lý (Processor), Thanh ghi, Mô-đun I/O, Bộ nhớ chính", "B. Bộ xử lý, Thanh ghi, Bộ nhớ chính, Bus hệ thống", "C. Bộ xử lý, Bộ nhớ chính, Mô-đun I/O, Bus hệ thống", "D. Không có lựa chọn nào đúng"],
+                "answer": "C. Bộ xử lý, Bộ nhớ chính, Mô-đun I/O, Bus hệ thống",
+                "explanation": "Ở cấp độ tổng quan nhất, máy tính bao gồm CPU (Processor), Bộ nhớ chính, Mô-đun I/O và Bus hệ thống dùng để kết nối chúng lại với nhau."
+            }
+        },
+        {
+            "id": 72,
+            "topic": "Process & Threads",
+            "en": {
+                "question": "Multiprogramming increases processor efficiency by:",
+                "options": ["A. Increasing processor speed", "B. Taking advantage of time wasted by long wait I/O handling", "C. Eliminating all idle processor cycles", "D. All of the other choices"],
+                "answer": "B. Taking advantage of time wasted by long wait I/O handling",
+                "explanation": "Multiprogramming keeps multiple jobs in memory. When one job waits for I/O, the OS switches the CPU to another job, thus utilizing time that would otherwise be wasted."
+            },
+            "vi": {
+                "question": "Đa chương (Multiprogramming) tăng hiệu suất của bộ xử lý bằng cách:",
+                "options": ["A. Tăng tốc độ của bộ xử lý", "B. Tận dụng thời gian lãng phí khi phải chờ các xử lý I/O lâu", "C. Loại bỏ hoàn toàn các chu kỳ nghỉ (idle) của bộ xử lý", "D. Tất cả các lựa chọn trên"],
+                "answer": "B. Tận dụng thời gian lãng phí khi phải chờ các xử lý I/O lâu",
+                "explanation": "Đa chương giữ nhiều tiến trình trong bộ nhớ. Khi một tiến trình phải chờ I/O, HĐH sẽ chuyển CPU sang chạy tiến trình khác, giúp tận dụng thời gian chết của CPU."
+            }
+        },
+        {
+            "id": 73,
+            "topic": "OS Overview & Architecture",
+            "en": {
+                "question": "Which of the following instructions should be allowed only in kernel mode?",
+                "options": ["A. Disable all interrupts", "B. Read the time-of-day clock", "C. AND of two numbers", "D. ADD of two numbers"],
+                "answer": "A. Disable all interrupts",
+                "explanation": "Disabling interrupts gives a process absolute control over the CPU. If allowed in user mode, a malicious or buggy program could freeze the entire system."
+            },
+            "vi": {
+                "question": "Lệnh nào sau đây CHỈ nên được cho phép thực thi trong chế độ hạt nhân (kernel mode)?",
+                "options": ["A. Vô hiệu hóa tất cả các ngắt (Disable all interrupts)", "B. Đọc đồng hồ thời gian trong ngày", "C. Phép AND hai số", "D. Phép CỘNG hai số"],
+                "answer": "A. Vô hiệu hóa tất cả các ngắt (Disable all interrupts)",
+                "explanation": "Tắt ngắt sẽ khóa HĐH không thể lấy lại quyền điều khiển CPU. Nếu cho phép người dùng chạy lệnh này, một phần mềm lỗi có thể làm treo toàn bộ máy tính."
+            }
+        },
+        {
+            "id": 74,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "A system with absolute guarantees that a certain action will occur by certain time is called:",
+                "options": ["A. Hard real-time system", "B. Soft real-time system", "C. Middle real-time system", "D. None of the other choices"],
+                "answer": "A. Hard real-time system",
+                "explanation": "Hard real-time systems require strict adherence to deadlines. Missing a deadline in such systems is considered a total system failure (e.g., pacemaker, airbag deployment)."
+            },
+            "vi": {
+                "question": "Một hệ thống đảm bảo tuyệt đối rằng một hành động nhất định sẽ xảy ra vào một thời điểm nhất định được gọi là:",
+                "options": ["A. Hệ thống thời gian thực cứng (Hard real-time system)", "B. Hệ thống thời gian thực mềm (Soft real-time system)", "C. Hệ thống thời gian thực trung bình", "D. Không có lựa chọn nào đúng"],
+                "answer": "A. Hệ thống thời gian thực cứng (Hard real-time system)",
+                "explanation": "Hệ thống thời gian thực cứng có các deadline (hạn chót) cực kỳ nghiêm ngặt. Việc trễ deadline được coi là lỗi hệ thống hoàn toàn (ví dụ: túi khí ô tô, máy trợ tim)."
+            }
+        },
+        {
+            "id": 75,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "Which conditions of mutual exclusion does the Strict Alternation (Software proposal) violate?",
+                "options": ["A. No two processes simultaneously in critical region", "B. No assumptions made about speeds or numbers of CPUs", "C. No process running outside its critical region may block another process", "D. No process must wait forever to enter its critical region"],
+                "answer": "C. No process running outside its critical region may block another process",
+                "explanation": "Strict alternation forces processes to strictly take turns. If process A is much slower and isn't ready to enter its critical region, process B will be blocked indefinitely even though the critical region is empty."
+            },
+            "vi": {
+                "question": "Giải pháp Luân phiên nghiêm ngặt (Strict Alternation) vi phạm điều kiện nào của loại trừ lẫn nhau?",
+                "options": ["A. Không có 2 tiến trình nào ở trong vùng tới hạn cùng lúc", "B. Không đưa ra giả định về tốc độ hay số lượng CPU", "C. Không tiến trình nào chạy ngoài vùng tới hạn được phép chặn tiến trình khác", "D. Không tiến trình nào phải chờ mãi mãi để vào vùng tới hạn"],
+                "answer": "C. Không tiến trình nào chạy ngoài vùng tới hạn được phép chặn tiến trình khác",
+                "explanation": "Luân phiên nghiêm ngặt ép các tiến trình phải luân phiên nhau vào vùng tới hạn (A rồi đến B, rồi lại A). Nếu B đang làm việc khác ở ngoài và không muốn vào vùng tới hạn, A sẽ bị kẹt mãi mãi."
+            }
+        },
+        {
+            "id": 76,
+            "topic": "OS Overview & Architecture",
+            "en": {
+                "question": "What is the characteristic of the fourth generation of operating system?",
+                "options": ["A. Vacuum tubes, plug boards", "B. Transistors, batch systems", "C. ICs and multiprogramming", "D. Personal computers, single user, multitasking"],
+                "answer": "D. Personal computers, single user, multitasking",
+                "explanation": "The 4th generation of computing (1980s-present) is defined by LSI circuits leading to Personal Computers (PCs), networks, and single-user but multitasking OSs like Windows and MacOS."
+            },
+            "vi": {
+                "question": "Đặc điểm của hệ điều hành thế hệ thứ tư là gì?",
+                "options": ["A. Ống chân không, bảng cắm", "B. Bóng bán dẫn, hệ thống xử lý lô (batch)", "C. Vi mạch (IC) và đa chương trình", "D. Máy tính cá nhân (PC), đơn người dùng, đa nhiệm"],
+                "answer": "D. Máy tính cá nhân (PC), đơn người dùng, đa nhiệm",
+                "explanation": "Thế hệ thứ 4 (từ 1980s) đánh dấu sự ra đời của máy tính cá nhân (Personal Computers), mạng máy tính, và các HĐH đa nhiệm dành cho cá nhân (như Windows, MacOS)."
+            }
+        },
+        {
+            "id": 77,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "Five batch jobs A through E, arrive at a computer center at almost the same time. They have estimated running times of 8, 6, 2, 10, and 4 minutes. Determine the average waiting time for FCFS scheduling. Ignore process switching overhead.",
+                "options": ["A. 17 minutes", "B. 18 minutes", "C. 18.8 minutes", "D. 12.8 minutes"],
+                "answer": "D. 12.8 minutes",
+                "explanation": "Wait times: A=0. B waits for A (8). C waits for A+B (8+6=14). D waits for A+B+C (14+2=16). E waits for A+B+C+D (16+10=26). Average = (0+8+14+16+26)/5 = 64/5 = 12.8 minutes."
+            },
+            "vi": {
+                "question": "Năm tiến trình A đến E đến cùng lúc. Thời gian chạy ước tính là 8, 6, 2, 10 và 4 phút. Tính thời gian chờ trung bình cho thuật toán FCFS (Đến trước phục vụ trước). Bỏ qua chi phí chuyển ngữ cảnh.",
+                "options": ["A. 17 phút", "B. 18 phút", "C. 18.8 phút", "D. 12.8 phút"],
+                "answer": "D. 12.8 phút",
+                "explanation": "Vì đến cùng lúc nên thứ tự là A, B, C, D, E. Thời gian chờ: A=0. B=8. C=8+6=14. D=14+2=16. E=16+10=26. Thời gian chờ trung bình = (0 + 8 + 14 + 16 + 26) / 5 = 64 / 5 = 12.8 phút."
+            }
+        },
+        {
+            "id": 78,
+            "topic": "Memory Management",
+            "en": {
+                "question": "A computer with a 32-bit address uses a two-level page table. Virtual addresses are split into a 9-bit top-level page table field, an 11-bit second-level page table field, and an offset. How large are the pages?",
+                "options": ["A. 4-KB page", "B. 2-KB page", "C. 1-KB page", "D. 512B page"],
+                "answer": "A. 4-KB page",
+                "explanation": "Total bits = 32. Offset bits = 32 - 9 - 11 = 12 bits. Page size is determined by the offset: 2^12 bytes = 4096 bytes = 4 KB."
+            },
+            "vi": {
+                "question": "Máy tính có địa chỉ 32-bit dùng bảng trang 2 cấp. Địa chỉ ảo được chia thành 9-bit cho bảng cấp 1, 11-bit cho bảng cấp 2, và phần còn lại là độ lệch (offset). Kích thước mỗi trang là bao nhiêu?",
+                "options": ["A. Trang 4-KB", "B. Trang 2-KB", "C. Trang 1-KB", "D. Trang 512B"],
+                "answer": "A. Trang 4-KB",
+                "explanation": "Tổng số bit = 32. Số bit của offset (độ lệch) = 32 - 9 - 11 = 12 bit. Kích thước trang = 2^12 byte = 4096 byte = 4 KB."
+            }
+        },
+        {
+            "id": 79,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "Assuming that it takes 10 nsec to copy a byte, how much time does it take to completely rewrite the screen of a 1000 x 600 pixel graphics with 24-bit color?",
+                "options": ["A. 18 msec", "B. 180 micro-sec", "C. 180 msec", "D. 18 micro-sec"],
+                "answer": "A. 18 msec",
+                "explanation": "24-bit color = 3 bytes per pixel. Total pixels = 1000 * 600 = 600,000. Total bytes = 600,000 * 3 = 1,800,000 bytes. Time = 1,800,000 * 10ns = 18,000,000 ns = 18 ms."
+            },
+            "vi": {
+                "question": "Giả sử mất 10 nsec để copy 1 byte, mất bao nhiêu thời gian để vẽ lại màn hình đồ họa 1000 x 600 pixel với màu 24-bit?",
+                "options": ["A. 18 msec", "B. 180 micro-sec", "C. 180 msec", "D. 18 micro-sec"],
+                "answer": "A. 18 msec",
+                "explanation": "Màu 24-bit = 3 byte/pixel. Tổng số pixel = 1000 * 600 = 600,000. Tổng số byte = 600,000 * 3 = 1,800,000 byte. Thời gian = 1,800,000 * 10ns = 18,000,000 ns = 18 msec."
+            }
+        },
+        {
+            "id": 80,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "Which solution is used to solve the \"missing block\" problem for file system consistency?",
+                "options": ["A. The file system checker rebuilds the free list", "B. The file system checker adds the missing blocks to the free list", "C. The file system checker allocate the free block, then copy the duplicate block in used to there", "D. None of the other choices"],
+                "answer": "B. The file system checker adds the missing blocks to the free list",
+                "explanation": "A missing block is a disk block that is neither claimed by any file nor in the free list. The system checker simply adds it back to the free list to fix the inconsistency."
+            },
+            "vi": {
+                "question": "Giải pháp nào được sử dụng để giải quyết vấn đề \"missing block\" (khối đĩa bị mất) để đảm bảo tính nhất quán của hệ thống tệp?",
+                "options": ["A. Bộ kiểm tra hệ thống tệp xây dựng lại danh sách trống", "B. Bộ kiểm tra hệ thống tệp thêm các khối bị thiếu vào danh sách các khối trống", "C. Bộ kiểm tra cấp phát khối trống, rồi copy khối bị lặp vào đó", "D. Không có lựa chọn nào đúng"],
+                "answer": "B. Bộ kiểm tra hệ thống tệp thêm các khối bị thiếu vào danh sách các khối trống",
+                "explanation": "Khối bị mất là khối không nằm trong tệp nào mà cũng không nằm trong danh sách trống. Trình kiểm tra (như fsck) chỉ việc bổ sung nó lại vào danh sách khối trống để tái sử dụng."
+            }
+        },
+        {
+            "id": 81,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "Which statement about disabling interrupts to resolve race conditions is wrong?",
+                "options": ["A. Process disable interrupts before entering critical section and re-enable them when finished.", "B. Disabling/enabling interrupts may negatively affect the I/O system.", "C. Programs with infinite loops in their critical sections are a significant problem with the interrupt-based approach.", "D. User-mode programs are the best place to invoke disableinterrupt."],
+                "answer": "D. User-mode programs are the best place to invoke disableinterrupt.",
+                "explanation": "User-mode programs should NEVER be allowed to disable interrupts. If a user program disabled interrupts and ran an infinite loop, the OS could never regain control, crashing the system."
+            },
+            "vi": {
+                "question": "Phát biểu nào về việc vô hiệu hóa ngắt (disabling interrupts) để giải quyết Race Condition là SAI?",
+                "options": ["A. Tiến trình tắt ngắt trước khi vào vùng tới hạn và bật lại khi xong.", "B. Tắt/bật ngắt có thể ảnh hưởng xấu đến hệ thống I/O.", "C. Chương trình bị vòng lặp vô hạn trong vùng tới hạn là vấn đề lớn với phương pháp này.", "D. Chương trình ở chế độ người dùng (user-mode) là nơi tốt nhất để gọi lệnh tắt ngắt."],
+                "answer": "D. Chương trình ở chế độ người dùng (user-mode) là nơi tốt nhất để gọi lệnh tắt ngắt.",
+                "explanation": "Không bao giờ được cho phép chương trình người dùng tắt ngắt. Nếu họ tắt ngắt rồi chạy vòng lặp vô hạn, HĐH sẽ mất quyền điều khiển và máy tính sẽ bị treo cứng."
+            }
+        },
+        {
+            "id": 82,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "_______is when, in modern printing systems, a disk accepts output from several users and acts as a temporary storage area for all output until the printer is ready to accept it.",
+                "options": ["A. Buffering", "B. Lagging", "C. Spooling", "D. Spoofing"],
+                "answer": "C. Spooling",
+                "explanation": "Spooling (Simultaneous Peripheral Operations On-Line) uses disk space as a large buffer to hold jobs (like print jobs) until the peripheral device is ready."
+            },
+            "vi": {
+                "question": "_______ là khi, trong các hệ thống in ấn hiện đại, đĩa nhận đầu ra từ nhiều người dùng và hoạt động như một khu vực lưu trữ tạm thời cho đến khi máy in sẵn sàng nhận nó.",
+                "options": ["A. Buffering", "B. Lagging", "C. Spooling", "D. Spoofing"],
+                "answer": "C. Spooling",
+                "explanation": "Spooling là kỹ thuật dùng một đĩa lưu trữ làm vùng đệm lớn để chứa các công việc (ví dụ in ấn) từ nhiều ứng dụng, sau đó từ từ đẩy vào thiết bị ngoại vi khi nó rảnh rỗi."
+            }
+        },
+        {
+            "id": 83,
+            "topic": "OS Overview & Architecture",
+            "en": {
+                "question": "VMware Workstation is:",
+                "options": ["A. Type 1 Hypervisor", "B. Type 2 Hypervisor", "C. Host Operating system", "D. Guest Operating system"],
+                "answer": "B. Type 2 Hypervisor",
+                "explanation": "VMware Workstation runs on top of a Host Operating System (like Windows or Linux), making it a Type 2 (hosted) hypervisor. Type 1 hypervisors run directly on bare metal."
+            },
+            "vi": {
+                "question": "VMware Workstation là gì?",
+                "options": ["A. Hypervisor Loại 1 (Type 1)", "B. Hypervisor Loại 2 (Type 2)", "C. Hệ điều hành máy chủ (Host OS)", "D. Hệ điều hành khách (Guest OS)"],
+                "answer": "B. Hypervisor Loại 2 (Type 2)",
+                "explanation": "VMware Workstation là một ứng dụng chạy trên nền một Hệ điều hành có sẵn (như Windows), do đó nó được phân loại là Hypervisor Loại 2."
+            }
+        },
+        {
+            "id": 84,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "Which of the following statements about device drivers is correct?",
+                "options": ["A. Device drivers lie on top of I/O software layer architecture", "B. Device drivers lie on bottom of I/O software layer architecture", "C. Device drivers layer lies right above the interrupt handlers layer and below the device-independent OS software layer", "D. None of the other choices"],
+                "answer": "C. Device drivers layer lies right above the interrupt handlers layer and below the device-independent OS software layer",
+                "explanation": "In the I/O software stack, device drivers abstract specific hardware details. They sit above low-level interrupt handlers and below the generic device-independent OS layer."
+            },
+            "vi": {
+                "question": "Phát biểu nào sau đây về Device Drivers (Trình điều khiển thiết bị) là ĐÚNG?",
+                "options": ["A. Nằm ở trên cùng của kiến trúc phần mềm I/O", "B. Nằm ở dưới cùng của kiến trúc phần mềm I/O", "C. Nằm ngay trên tầng Xử lý ngắt (Interrupt handlers) và dưới tầng phần mềm HĐH độc lập thiết bị", "D. Không có lựa chọn nào đúng"],
+                "answer": "C. Nằm ngay trên tầng Xử lý ngắt (Interrupt handlers) và dưới tầng phần mềm HĐH độc lập thiết bị",
+                "explanation": "Trong ngăn xếp phần mềm I/O, Device Drivers nằm ở giữa, giao tiếp với phần cứng (thông qua Interrupt handlers ở dưới) và cung cấp giao diện chuẩn cho HĐH (tầng độc lập thiết bị ở trên)."
+            }
+        },
+        {
+            "id": 85,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "An example of a I/O block devices is:",
+                "options": ["A. CD ROM", "B. Printer", "C. Modem", "D. All of the other choices"],
+                "answer": "A. CD ROM",
+                "explanation": "Block devices store information in fixed-size blocks (like disks, CD-ROMs, USBs). Printers and modems process data as streams of characters (Character devices)."
+            },
+            "vi": {
+                "question": "Ví dụ về một thiết bị I/O dạng khối (block device) là:",
+                "options": ["A. CD ROM", "B. Máy in", "C. Modem", "D. Tất cả các lựa chọn trên"],
+                "answer": "A. CD ROM",
+                "explanation": "Thiết bị khối lưu trữ và truyền dữ liệu theo từng khối có kích thước cố định (ví dụ đĩa cứng, CD-ROM). Máy in và Modem là thiết bị dạng ký tự (Character devices)."
+            }
+        },
+        {
+            "id": 86,
+            "topic": "Memory Management",
+            "en": {
+                "question": "Which of the following information bits in the entry of page table is used to indicate locked page?",
+                "options": ["A. Present/absent bit", "B. Caching disabled", "C. Referenced bit", "D. Modified bit"],
+                "answer": "B. Caching disabled",
+                "explanation": "The 'Caching disabled' bit allows a page to bypass the CPU cache, which is critical for locking memory pages that map directly to device registers (Memory-mapped I/O)."
+            },
+            "vi": {
+                "question": "Bit thông tin nào trong mục nhập của bảng trang được sử dụng để chỉ ra một trang bị khóa (locked page)?",
+                "options": ["A. Present/absent bit (Bit hiện diện)", "B. Caching disabled (Tắt bộ đệm)", "C. Referenced bit (Bit tham chiếu)", "D. Modified bit (Bit bị sửa đổi)"],
+                "answer": "B. Caching disabled (Tắt bộ đệm)",
+                "explanation": "Bit 'Tắt bộ đệm' (Caching disabled) cho phép trang bỏ qua bộ nhớ cache của CPU, cực kỳ quan trọng để khóa các trang bộ nhớ ánh xạ trực tiếp đến các thanh ghi của thiết bị (Memory-mapped I/O)."
+            }
+        },
+        {
+            "id": 87,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "Which of the following is not correct about hard links?",
+                "options": ["A. Hard links can point to files in the network", "B. Hard links do not require extra disk space", "C. Hard links can only point to files on the same machines", "D. Hard links require to increase the link count in the i-node for each linking"],
+                "answer": "A. Hard links can point to files in the network",
+                "explanation": "Hard links map a filename directly to an i-node number. Since i-node numbers are only unique within a specific partition/filesystem, hard links cannot span across different partitions or networks."
+            },
+            "vi": {
+                "question": "Điều nào sau đây KHÔNG ĐÚNG về liên kết cứng (hard links)?",
+                "options": ["A. Liên kết cứng có thể trỏ đến các tệp trên mạng", "B. Liên kết cứng không yêu cầu thêm không gian đĩa", "C. Liên kết cứng chỉ có thể trỏ đến các tệp trên cùng một máy (cùng phân vùng)", "D. Liên kết cứng yêu cầu tăng số đếm liên kết trong i-node cho mỗi lần liên kết"],
+                "answer": "A. Liên kết cứng có thể trỏ đến các tệp trên mạng",
+                "explanation": "Liên kết cứng gắn tên tệp trực tiếp vào số i-node. Do số i-node chỉ có ý nghĩa cục bộ trong 1 phân vùng đĩa, nên liên kết cứng không thể trỏ sang phân vùng khác hay máy tính khác trên mạng."
+            }
+        },
+        {
+            "id": 88,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "Which of the following is correct about Shortest Job First scheduling algorithm?",
+                "options": ["A. Avoid Starvation", "B. Minimize average waiting time", "C. Avoid Starvation and Minimize average waiting time", "D. None of the other choices"],
+                "answer": "B. Minimize average waiting time",
+                "explanation": "SJF is mathematically provable to yield the absolute minimum average waiting time for a given set of processes. However, it suffers from starvation (long jobs might wait forever)."
+            },
+            "vi": {
+                "question": "Điều nào sau đây là ĐÚNG về thuật toán lập lịch SJF (Công việc ngắn nhất chạy trước)?",
+                "options": ["A. Tránh được tình trạng chết đói (Starvation)", "B. Giảm thiểu thời gian chờ trung bình", "C. Vừa tránh chết đói, vừa giảm thời gian chờ trung bình", "D. Không có lựa chọn nào đúng"],
+                "answer": "B. Giảm thiểu thời gian chờ trung bình",
+                "explanation": "SJF được chứng minh toán học là mang lại thời gian chờ trung bình thấp nhất. Tuy nhiên, nhược điểm lớn của nó là gây ra Starvation (công việc dài có thể không bao giờ được chạy nếu công việc ngắn cứ liên tục đến)."
+            }
+        },
+        {
+            "id": 89,
+            "topic": "OS Overview & Architecture",
+            "en": {
+                "question": "Which of the following statements about interrupts and system calls is incorrect?",
+                "options": ["A. System calls are caused by internal (synchronous) events", "B. Interrupts are asynchronous", "C. Interrupts are caused by external events", "D. None of the other choices"],
+                "answer": "D. None of the other choices",
+                "explanation": "All statements A, B, and C are completely correct. System calls (traps) are intentional and synchronous. Hardware interrupts are external and asynchronous. Thus, none of them are incorrect."
+            },
+            "vi": {
+                "question": "Phát biểu nào sau đây về ngắt (interrupts) và lời gọi hệ thống (system calls) là KHÔNG CHÍNH XÁC?",
+                "options": ["A. System call được tạo ra bởi các sự kiện bên trong (đồng bộ)", "B. Ngắt (Interrupts) mang tính bất đồng bộ (asynchronous)", "C. Ngắt được tạo ra bởi các sự kiện bên ngoài (phần cứng)", "D. Không có lựa chọn nào sai"],
+                "answer": "D. Không có lựa chọn nào sai",
+                "explanation": "Các phát biểu A, B, C đều đúng chuẩn lý thuyết. System call là chủ đích của phần mềm (đồng bộ). Ngắt là do phần cứng bên ngoài báo hiệu (bất đồng bộ). Do đó không có câu nào sai."
+            }
+        },
+        {
+            "id": 90,
+            "topic": "Memory Management",
+            "en": {
+                "question": "Which of following is true about main memory in the memory hierarchy?",
+                "options": ["A. Small amount of fast expensive memory", "B. Some medium-speed medium price", "C. Gigabytes of slow cheap memory", "D. None of the other choices"],
+                "answer": "B. Some medium-speed medium price",
+                "explanation": "In the memory hierarchy: Registers/Cache are small, fast, and expensive (A). Disks are large, slow, and cheap (C). Main memory (RAM) sits in the middle: medium speed, medium capacity, medium price (B)."
+            },
+            "vi": {
+                "question": "Phát biểu nào sau đây là đúng về Bộ nhớ chính (Main memory / RAM) trong phân cấp bộ nhớ?",
+                "options": ["A. Lượng nhỏ, tốc độ rất nhanh và đắt tiền", "B. Tốc độ trung bình, giá cả trung bình", "C. Hàng Gigabyte, tốc độ chậm và rẻ tiền", "D. Không có lựa chọn nào đúng"],
+                "answer": "B. Tốc độ trung bình, giá cả trung bình",
+                "explanation": "Trong tháp phân cấp: Cache rất nhanh và đắt (A). Ổ cứng/Đĩa từ thì chậm, dung lượng lớn và rẻ (C). Bộ nhớ chính (RAM) nằm ở giữa: tốc độ vừa phải, giá vừa phải."
+            }
+        },
+        {
+            "id": 91,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "Which deadlock condition does \"Take resources away\" attack?",
+                "options": ["A. Mutual exclusion", "B. Hold and wait", "C. No preemption", "D. Circular-wait condition"],
+                "answer": "C. No preemption",
+                "explanation": "Forcibly taking resources away from a process that already holds them directly breaks the \"No preemption\" condition (which states resources cannot be forcibly removed)."
+            },
+            "vi": {
+                "question": "Hành động \"Lấy lại tài nguyên\" (Take resources away) nhằm tấn công vào điều kiện Deadlock nào?",
+                "options": ["A. Loại trừ lẫn nhau (Mutual exclusion)", "B. Giữ và chờ (Hold and wait)", "C. Không tước đoạt (No preemption)", "D. Chờ đợi vòng tròn (Circular-wait)"],
+                "answer": "C. Không tước đoạt (No preemption)",
+                "explanation": "Cưỡng chế lấy lại tài nguyên từ một tiến trình đang giữ nó chính là việc phá vỡ quy tắc 'Không tước đoạt' (No preemption)."
+            }
+        },
+        {
+            "id": 92,
+            "topic": "OS Overview & Architecture",
+            "en": {
+                "question": "What is not a main function of an operating system?",
+                "options": ["A. Provide the users with an extended (virtual) machine", "B. Manage the I/O devices", "C. Provide user interfaces", "D. Support virtual memory"],
+                "answer": "C. Provide user interfaces",
+                "explanation": "Strictly speaking, User Interfaces (GUI/CLI) are shell/desktop environment applications running on top of the OS. The core OS functions are resource management (memory, I/O) and providing an extended machine abstraction."
+            },
+            "vi": {
+                "question": "Điều nào sau đây KHÔNG PHẢI là chức năng chính của Hệ điều hành?",
+                "options": ["A. Cung cấp cho người dùng một cỗ máy ảo mở rộng", "B. Quản lý các thiết bị I/O", "C. Cung cấp giao diện người dùng (User interfaces)", "D. Hỗ trợ bộ nhớ ảo"],
+                "answer": "C. Cung cấp giao diện người dùng (User interfaces)",
+                "explanation": "Về mặt học thuật, Giao diện người dùng (GUI/CLI) chỉ là các chương trình (shell) chạy trên nền HĐH chứ không phải phần lõi (kernel) của HĐH. Nhiệm vụ cốt lõi của HĐH là quản lý tài nguyên và cung cấp API."
+            }
+        },
+        {
+            "id": 93,
+            "topic": "Memory Management",
+            "en": {
+                "question": "Which of these statements about the Inverted Page Table are true?",
+                "options": ["A. An entry contains the pair (process, virtual page) mapped into the corresponding page frame", "B. An entry contains the pair (process, offset) mapped into the corresponding page frame", "C. An entry contains the pair (segment, virtual page) mapped into the corresponding page frame", "D. An entry contains the pair (segment, offset) mapped into the corresponding page frame"],
+                "answer": "A. An entry contains the pair (process, virtual page) mapped into the corresponding page frame",
+                "explanation": "An inverted page table has exactly one entry for every physical frame in memory. That entry stores which Process ID and Virtual Page currently occupy that frame."
+            },
+            "vi": {
+                "question": "Phát biểu nào về Bảng trang nghịch đảo (Inverted Page Table) là ĐÚNG?",
+                "options": ["A. Một mục nhập chứa cặp (tiến trình, trang ảo) được ánh xạ vào khung trang tương ứng", "B. Một mục nhập chứa cặp (tiến trình, độ lệch) được ánh xạ vào khung trang tương ứng", "C. Một mục nhập chứa cặp (phân đoạn, trang ảo) được ánh xạ vào khung trang tương ứng", "D. Không có lựa chọn nào đúng"],
+                "answer": "A. Một mục nhập chứa cặp (tiến trình, trang ảo) được ánh xạ vào khung trang tương ứng",
+                "explanation": "Bảng trang nghịch đảo chỉ có 1 dòng cho mỗi khung vật lý (frame) trong RAM. Dòng đó lưu xem khung này đang chứa (Process ID nào, Trang ảo số mấy)."
+            }
+        },
+        {
+            "id": 94,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "Each device attached to your computer comes with a special program called a _______that facilitates the communication between the device and the OS.",
+                "options": ["A. device configurator", "B. translator", "C. device driver", "D. communication utility"],
+                "answer": "C. device driver",
+                "explanation": "A device driver is specific software written (usually by the manufacturer) to allow the OS to interact with specific hardware."
+            },
+            "vi": {
+                "question": "Mỗi thiết bị gắn vào máy tính đi kèm với một chương trình đặc biệt gọi là _______ nhằm hỗ trợ giao tiếp giữa thiết bị và HĐH.",
+                "options": ["A. device configurator", "B. translator", "C. device driver (Trình điều khiển thiết bị)", "D. communication utility"],
+                "answer": "C. device driver (Trình điều khiển thiết bị)",
+                "explanation": "Trình điều khiển thiết bị (Driver) là phần mềm đặc thù do nhà sản xuất viết để giúp HĐH biết cách điều khiển và giao tiếp với phần cứng đó."
+            }
+        },
+        {
+            "id": 95,
+            "topic": "Process & Threads",
+            "en": {
+                "question": "Which of the following process state transitions is correct, when the external event for which a process was waiting happens?",
+                "options": ["A. Running -> Blocked (waiting)", "B. Running -> ready", "C. Blocked (waiting) -> ready", "D. Ready -> running"],
+                "answer": "C. Blocked (waiting) -> ready",
+                "explanation": "When a process is blocked waiting for an event (like I/O completion), and that event occurs, the OS moves it from the Blocked state to the Ready state so it can be scheduled to run again."
+            },
+            "vi": {
+                "question": "Sự chuyển đổi trạng thái tiến trình nào sau đây là đúng, khi sự kiện bên ngoài mà tiến trình đang chờ đợi xảy ra?",
+                "options": ["A. Running -> Blocked", "B. Running -> Ready", "C. Blocked (waiting) -> Ready", "D. Ready -> Running"],
+                "answer": "C. Blocked (waiting) -> Ready",
+                "explanation": "Khi tiến trình đang bị Chặn (Blocked) để đợi I/O, và I/O hoàn tất, nó sẽ được HĐH đánh thức và chuyển sang trạng thái Sẵn sàng (Ready) để chờ CPU cấp phát."
+            }
+        },
+        {
+            "id": 96,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "All deadlocks involve conflicting needs for resources by",
+                "options": ["A. One or more processes", "B. Two or more processes", "C. Three or more processes", "D. None of the other choices"],
+                "answer": "B. Two or more processes",
+                "explanation": "Deadlock is a scenario where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process. This inherently requires at least 2 processes."
+            },
+            "vi": {
+                "question": "Tất cả các Deadlock đều liên quan đến nhu cầu tài nguyên xung đột bởi:",
+                "options": ["A. Một hoặc nhiều tiến trình", "B. Hai hoặc nhiều tiến trình", "C. Ba hoặc nhiều tiến trình", "D. Không có lựa chọn nào đúng"],
+                "answer": "B. Hai hoặc nhiều tiến trình",
+                "explanation": "Deadlock (Bế tắc) xảy ra khi các tiến trình kẹt nhau theo một vòng tròn chờ đợi (A đợi B, B đợi A). Do đó, phải có ít nhất từ 2 tiến trình trở lên mới tạo ra được Deadlock."
+            }
+        },
+        {
+            "id": 97,
+            "topic": "Memory Management",
+            "en": {
+                "question": "Suppose a virtual address space of 2^32 words and the page size is 2^12 words. If the virtual address is 12345678 in Hexadecimal, what would be the page number in Hexadecimal?",
+                "options": ["A. 123", "B. 1234", "C. 12345", "D. 123456"],
+                "answer": "C. 12345",
+                "explanation": "Page size 2^12 means 12 bits are used for the offset. In Hex, 1 digit = 4 bits, so 12 bits = 3 Hex digits. The last 3 digits ('678') are the offset. The remaining part ('12345') is the page number."
+            },
+            "vi": {
+                "question": "Giả sử không gian địa chỉ ảo là 2^32 từ và kích thước trang là 2^12 từ. Nếu địa chỉ ảo là 12345678 (hệ thập lục phân - Hex), số hiệu trang (page number) bằng Hex sẽ là bao nhiêu?",
+                "options": ["A. 123", "B. 1234", "C. 12345", "D. 123456"],
+                "answer": "C. 12345",
+                "explanation": "Kích thước trang 2^12 tức là 12 bit cuối làm Offset. Trong hệ Hex, 1 chữ số = 4 bit -> 12 bit tương đương 3 chữ số Hex cuối cùng. Tách '12345678': phần Offset là '678', phần Số trang (Page number) là phần còn lại '12345'."
+            }
+        },
+        {
+            "id": 98,
+            "topic": "Memory Management",
+            "en": {
+                "question": "In terms of disk storage efficiency, the method of \"Backing up pages dynamically\" in comparison with the method of \"Paging to a static swap area\" is",
+                "options": ["A. Better", "B. Worse", "C. Equal", "D. Nearly equal"],
+                "answer": "A. Better",
+                "explanation": "Allocating swap space dynamically on disk only uses the disk space actually needed at the moment, making it more storage-efficient than pre-allocating a huge, static swap partition that might sit empty."
+            },
+            "vi": {
+                "question": "Về mặt hiệu quả lưu trữ ổ đĩa, phương pháp \"Sao lưu các trang động\" so với phương pháp \"Phân trang vào một khu vực swap tĩnh\" thì:",
+                "options": ["A. Tốt hơn (Better)", "B. Kém hơn (Worse)", "C. Bằng nhau (Equal)", "D. Gần bằng nhau"],
+                "answer": "A. Tốt hơn (Better)",
+                "explanation": "Cấp phát không gian swap động chỉ chiếm dụng đĩa khi thực sự cần, giúp tiết kiệm dung lượng ổ đĩa hơn nhiều so với việc cắt hẳn một phân vùng tĩnh khổng lồ dù không xài hết."
+            }
+        },
+        {
+            "id": 99,
+            "topic": "Process & Threads",
+            "en": {
+                "question": "Which is true about Mutex?",
+                "options": ["A. A simplified version of the semaphore when the semaphore's ability to count is not needed", "B. Is good only for managing mutual exclusion to some shared resource or piece of code", "C. Is a variable that can be in one of two states: unlocked or locked", "D. All of the other choices"],
+                "answer": "D. All of the other choices",
+                "explanation": "A Mutex (Mutual Exclusion) is basically a binary semaphore (0 or 1) used strictly for locking critical sections. All provided statements describe it correctly."
+            },
+            "vi": {
+                "question": "Điều nào là ĐÚNG về Mutex?",
+                "options": ["A. Là phiên bản rút gọn của Semaphore khi không cần khả năng đếm", "B. Chỉ tốt cho việc quản lý loại trừ lẫn nhau đối với tài nguyên hoặc đoạn mã dùng chung", "C. Là một biến chỉ có 2 trạng thái: khóa (locked) hoặc mở khóa (unlocked)", "D. Tất cả các lựa chọn trên"],
+                "answer": "D. Tất cả các lựa chọn trên",
+                "explanation": "Mutex (Mutual Exclusion) bản chất là một semaphore nhị phân (chỉ có 0 và 1) dùng riêng cho việc khóa các vùng tới hạn. Tất cả các mô tả trên đều hoàn toàn chính xác."
+            }
+        },
+        {
+            "id": 100,
+            "topic": "Process & Threads",
+            "en": {
+                "question": "Which of the following conditions that causes the processes to be terminated, when the process uses a system call to tell the OS to finish some other process?",
+                "options": ["A. Normal exit (voluntary)", "B. Error exit (voluntary)", "C. Fatal error (involuntary)", "D. Killed by another process (involuntary)"],
+                "answer": "D. Killed by another process (involuntary)",
+                "explanation": "If Process A tells the OS to terminate Process B (e.g., using the `kill()` system call in Linux), from Process B's perspective, it was involuntarily killed by another process."
+            },
+            "vi": {
+                "question": "Điều kiện nào sau đây khiến tiến trình bị chấm dứt, khi một tiến trình dùng System Call báo HĐH kết liễu một tiến trình khác?",
+                "options": ["A. Thoát bình thường (Tự nguyện)", "B. Thoát do lỗi (Tự nguyện)", "C. Lỗi nghiêm trọng (Không tự nguyện)", "D. Bị giết bởi tiến trình khác (Không tự nguyện)"],
+                "answer": "D. Bị giết bởi tiến trình khác (Không tự nguyện)",
+                "explanation": "Khi tiến trình A gọi lệnh (ví dụ `kill()`) để ép HĐH đóng tiến trình B, thì tiến trình B đã bị ép kết thúc ngoài ý muốn. Đây là trường hợp 'Killed by another process'."
+            }
+        }
+// ... (Dán nối tiếp vào sau câu cuối cùng của bạn)
+        {
+            "id": 101,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "In a single processor system, mutual exclusion can be guaranteed by:",
+                "options": ["A. Overlapping processes", "B. Interleaving processes", "C. Disabling interrupts", "D. All of the other choices"],
+                "answer": "C. Disabling interrupts",
+                "explanation": "In a single-processor system, disabling interrupts prevents the CPU from switching to another process. Therefore, the current process can execute its critical section without fear of being preempted, ensuring mutual exclusion."
+            },
+            "vi": {
+                "question": "Trong hệ thống đơn bộ xử lý (single processor), việc loại trừ lẫn nhau (mutual exclusion) có thể được đảm bảo bằng cách:",
+                "options": ["A. Chồng chéo các tiến trình", "B. Xen kẽ các tiến trình", "C. Vô hiệu hóa ngắt (Disabling interrupts)", "D. Tất cả các lựa chọn trên"],
+                "answer": "C. Vô hiệu hóa ngắt (Disabling interrupts)",
+                "explanation": "Trên máy tính chỉ có 1 CPU, tắt ngắt (disable interrupts) sẽ ngăn CPU chuyển sang tiến trình khác. Do đó, tiến trình hiện tại có thể chạy đoạn mã tới hạn mà không sợ bị chen ngang, đảm bảo được việc loại trừ lẫn nhau."
+            }
+        },
+        {
+            "id": 102,
+            "topic": "Process & Threads",
+            "en": {
+                "question": "Sometimes it happens that a thread wants to give another thread a chance to run. It can establish this goal by calling:",
+                "options": ["A. thread_create", "B. thread_exit", "C. thread_wait", "D. thread_yield"],
+                "answer": "D. thread_yield",
+                "explanation": "The `thread_yield()` function voluntarily yields the CPU, allowing the scheduler to pick another thread of the same or higher priority to run."
+            },
+            "vi": {
+                "question": "Đôi khi một luồng (thread) muốn nhường cơ hội chạy cho một luồng khác. Nó có thể thực hiện mục tiêu này bằng cách gọi hàm:",
+                "options": ["A. thread_create", "B. thread_exit", "C. thread_wait", "D. thread_yield"],
+                "answer": "D. thread_yield",
+                "explanation": "Hàm `thread_yield()` (nhường quyền) giúp một luồng tự nguyện từ bỏ CPU để bộ lập lịch có thể chọn một luồng khác có cùng mức độ ưu tiên hoặc cao hơn để chạy."
+            }
+        },
+        {
+            "id": 103,
+            "topic": "Process & Threads",
+            "en": {
+                "question": "Which of the following actions does the operating system take to execute a new process?",
+                "options": ["A. Provide immediate CPU for process.", "B. Delivery the resources must be process.", "C. Create immediate PCB blocks for process.", "D. Provide immediate Register for process."],
+                "answer": "C. Create immediate PCB blocks for process.",
+                "explanation": "To manage a newly created process, the OS must first create a Process Control Block (PCB) to store its state, PID, memory bounds, and scheduling information."
+            },
+            "vi": {
+                "question": "Hệ điều hành thực hiện hành động nào sau đây để thực thi một tiến trình mới?",
+                "options": ["A. Cung cấp CPU ngay lập tức cho tiến trình.", "B. Cung cấp ngay các tài nguyên mà tiến trình cần.", "C. Tạo ngay khối PCB cho tiến trình.", "D. Cung cấp thanh ghi ngay lập tức cho tiến trình."],
+                "answer": "C. Tạo ngay khối PCB cho tiến trình.",
+                "explanation": "Để quản lý một tiến trình vừa được tạo, việc đầu tiên HĐH phải làm là tạo ra một Khối Điều khiển Tiến trình (Process Control Block - PCB) để lưu trữ trạng thái, PID, vùng nhớ... của nó."
+            }
+        },
+        {
+            "id": 104,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "Which of the following allocation methods, Operating system MS-DOS is implemented?",
+                "options": ["A. Contiguous allocation", "B. Linked allocation", "C. Indexed allocation", "D. Linked allocation using FAT"],
+                "answer": "D. Linked allocation using FAT",
+                "explanation": "MS-DOS uses the File Allocation Table (FAT) file system, which is essentially a form of linked allocation where the links are stored in a separate table in memory rather than in the data blocks themselves."
+            },
+            "vi": {
+                "question": "Hệ điều hành MS-DOS triển khai phương pháp cấp phát tệp nào sau đây?",
+                "options": ["A. Cấp phát liên tục (Contiguous allocation)", "B. Cấp phát liên kết (Linked allocation)", "C. Cấp phát có chỉ mục (Indexed allocation)", "D. Cấp phát liên kết sử dụng FAT"],
+                "answer": "D. Cấp phát liên kết sử dụng FAT",
+                "explanation": "MS-DOS sử dụng hệ thống tệp FAT (File Allocation Table), đây thực chất là một dạng cấp phát liên kết nhưng các con trỏ liên kết được lưu tập trung trong một bảng (bảng FAT) thay vì lưu xen kẽ trong các khối dữ liệu."
+            }
+        },
+        {
+            "id": 105,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "Increasing file system performance is implemented by_____",
+                "options": ["A. Buffer cache", "B. Block Read Ahead", "C. Defragmenting Disks", "D. All of the other choices"],
+                "answer": "D. All of the other choices",
+                "explanation": "Buffer caching keeps frequently used blocks in RAM. Block read-ahead fetches blocks before they are explicitly requested. Defragmenting keeps file blocks contiguous, reducing disk head movement. All of these improve performance."
+            },
+            "vi": {
+                "question": "Việc tăng cường hiệu suất của hệ thống tệp được thực hiện bởi_____",
+                "options": ["A. Bộ nhớ đệm (Buffer cache)", "B. Đọc trước khối đĩa (Block Read Ahead)", "C. Chống phân mảnh đĩa (Defragmenting Disks)", "D. Tất cả các lựa chọn trên"],
+                "answer": "D. Tất cả các lựa chọn trên",
+                "explanation": "Bộ nhớ đệm giúp giữ các khối hay dùng trên RAM. Đọc trước giúp tải dữ liệu lên trước khi người dùng cần. Chống phân mảnh giúp các khối tệp nằm liền kề nhau để giảm thời gian di chuyển đầu từ. Tất cả đều giúp tăng tốc độ xử lý I/O."
+            }
+        },
+        {
+            "id": 106,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "Assuming that it takes 10 nsec to copy a byte, how much time does it take to completely rewrite the screen of a 1000 x 600 pixel graphics with 24-bit color?",
+                "options": ["A. 18 msec", "B. 180 micro-sec", "C. 180 msec", "D. 18 micro-sec"],
+                "answer": "A. 18 msec",
+                "explanation": "24-bit color means 3 bytes per pixel. Total bytes = 1000 * 600 * 3 = 1,800,000 bytes. Time = 1,800,000 * 10 nsec = 18,000,000 nsec. Since 1 msec = 1,000,000 nsec, the total time is 18 msec."
+            },
+            "vi": {
+                "question": "Giả sử mất 10 nsec (nanô-giây) để sao chép một byte, mất bao nhiêu thời gian để vẽ lại toàn bộ màn hình đồ họa 1000 x 600 pixel với màu 24-bit?",
+                "options": ["A. 18 msec", "B. 180 micro-sec", "C. 180 msec", "D. 18 micro-sec"],
+                "answer": "A. 18 msec",
+                "explanation": "Màu 24-bit cần 3 byte cho mỗi pixel. Tổng số byte cần vẽ = 1000 * 600 * 3 = 1,800,000 byte. Thời gian = 1,800,000 * 10 nsec = 18,000,000 nsec. Do 1 msec = 1,000,000 nsec nên đáp án là 18 msec."
+            }
+        },
+        {
+            "id": 107,
+            "topic": "Memory Management",
+            "en": {
+                "question": "As one proceeds down the memory hierarchy (from inboard memory to offline storage), which of the following conditions is correct?",
+                "options": ["A. Increasing cost per bit", "B. Decreasing capacity", "C. Increasing access time", "D. None of the other choices"],
+                "answer": "C. Increasing access time",
+                "explanation": "Moving down the memory hierarchy (Cache -> RAM -> Disk -> Tape), capacity increases, cost per bit decreases, but the access time significantly INCREASES (it gets slower)."
+            },
+            "vi": {
+                "question": "Khi đi dần xuống theo tháp phân cấp bộ nhớ (từ bộ nhớ trong/nhanh xuống các thiết bị lưu trữ ngoại tuyến/chậm), điều kiện nào sau đây là đúng?",
+                "options": ["A. Chi phí trên mỗi bit tăng lên", "B. Dung lượng giảm xuống", "C. Thời gian truy cập tăng lên", "D. Không có lựa chọn nào đúng"],
+                "answer": "C. Thời gian truy cập tăng lên",
+                "explanation": "Càng đi xuống đáy tháp phân cấp (ví dụ: từ Cache -> RAM -> Đĩa cứng HDD), dung lượng càng lớn, giá càng rẻ, nhưng thời gian để đọc/ghi dữ liệu (access time) sẽ TĂNG LÊN (tốc độ chậm đi)."
+            }
+        },
+        {
+            "id": 108,
+            "topic": "OS Overview & Architecture",
+            "en": {
+                "question": "_____is a small computer that fits in a shirt pocket and performs a small number of functions, such as an electronic address book and memo pad.",
+                "options": ["A. Personal Computer", "B. Personal Device", "C. Personal Operating System", "D. Personal Digital Assistant"],
+                "answer": "D. Personal Digital Assistant",
+                "explanation": "A Personal Digital Assistant (PDA) was an early mobile device (predecessor to smartphones) designed to function as a personal information manager."
+            },
+            "vi": {
+                "question": "_____ là một máy tính nhỏ có thể đút vừa túi áo và thực hiện một số ít chức năng, ví dụ như sổ địa chỉ điện tử hoặc sổ ghi nhớ.",
+                "options": ["A. Máy tính cá nhân (PC)", "B. Thiết bị cá nhân", "C. Hệ điều hành cá nhân", "D. Thiết bị hỗ trợ kỹ thuật số cá nhân (PDA)"],
+                "answer": "D. Thiết bị hỗ trợ kỹ thuật số cá nhân (PDA)",
+                "explanation": "PDA (Personal Digital Assistant) là thiết bị di động nhỏ gọn thế hệ cũ (tiền thân của smartphone), chủ yếu dùng để ghi chú, lưu danh bạ và quản lý công việc."
+            }
+        },
+        {
+            "id": 109,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "Single-sided, single-layer DVD can hold:",
+                "options": ["A. 4.7 GB", "B. 8.5 GB", "C. 9.4 GB", "D. 17 GB"],
+                "answer": "A. 4.7 GB",
+                "explanation": "The standard capacity of a single-sided, single-layer DVD (DVD-5) is 4.7 Gigabytes."
+            },
+            "vi": {
+                "question": "Đĩa DVD một mặt, một lớp (Single-sided, single-layer DVD) có thể chứa dung lượng bao nhiêu?",
+                "options": ["A. 4.7 GB", "B. 8.5 GB", "C. 9.4 GB", "D. 17 GB"],
+                "answer": "A. 4.7 GB",
+                "explanation": "Sức chứa tiêu chuẩn của một đĩa DVD thông thường (một mặt, một lớp - loại DVD-5) là 4.7 Gigabyte."
+            }
+        },
+        {
+            "id": 110,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "The Linking technique that allows the file to appear in more than one directory are:",
+                "options": ["A. Hard link", "B. Symbolic link", "C. Both hard link and symbolic link", "D. Soft link"],
+                "answer": "C. Both hard link and symbolic link",
+                "explanation": "Both hard links (pointing directly to the inode) and symbolic/soft links (pointing to the original file path) allow a file to be accessed from multiple directories."
+            },
+            "vi": {
+                "question": "Kỹ thuật Liên kết (Linking) nào cho phép một tệp xuất hiện ở nhiều thư mục khác nhau?",
+                "options": ["A. Liên kết cứng (Hard link)", "B. Liên kết biểu tượng (Symbolic link)", "C. Cả liên kết cứng và liên kết biểu tượng", "D. Liên kết mềm (Soft link)"],
+                "answer": "C. Cả liên kết cứng và liên kết biểu tượng",
+                "explanation": "Cả hai cơ chế Liên kết cứng (trỏ thẳng vào inode) và Liên kết mềm/biểu tượng (chỉ chứa đường dẫn đến tệp gốc) đều giúp người dùng có thể truy cập 1 tệp tin từ nhiều thư mục khác nhau."
+            }
+        },
+        {
+            "id": 111,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "A disk queue with requests for I/O blocks on cylinders in orders: 10, 22, 20, 2, 40, 6, 38. Assume that the disk head is initially at cylinder 20. How many cylinder do Total head movement using Elevator algorithms?",
+                "options": ["A. 146", "B. 60", "C. 58", "D. None of the others"],
+                "answer": "C. 58",
+                "explanation": "Elevator (SCAN) moves in one direction until the end, then reverses. Assuming it moves UP first: 20 -> 22 -> 38 -> 40 (movement = 20). Then it reverses DOWN: 40 -> 10 -> 6 -> 2 (movement = 38). Total movement = 20 + 38 = 58."
+            },
+            "vi": {
+                "question": "Một hàng đợi đĩa có các yêu cầu truy cập block tại các cylinder: 10, 22, 20, 2, 40, 6, 38. Giả sử đầu từ đang ở cylinder 20. Tổng số cylinder đầu từ phải di chuyển nếu dùng thuật toán Thang máy (Elevator) là bao nhiêu?",
+                "options": ["A. 146", "B. 60", "C. 58", "D. Không có lựa chọn nào đúng"],
+                "answer": "C. 58",
+                "explanation": "Thuật toán Thang máy (SCAN) đi theo 1 chiều đến cuối rồi vòng lại. Giả sử đầu từ đi LÊN trước: 20 -> 22 -> 38 -> 40 (quãng đường = 40 - 20 = 20). Sau đó vòng XUỐNG: 40 -> 10 -> 6 -> 2 (quãng đường = 40 - 2 = 38). Tổng quãng đường = 20 + 38 = 58."
+            }
+        },
+        {
+            "id": 112,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "Which is not a goal of a scheduling algorithm for all systems?",
+                "options": ["A. Response time", "B. Policy enforcement", "C. Balance", "D. Fairness"],
+                "answer": "A. Response time",
+                "explanation": "Fairness, Balance, and Policy Enforcement are universal goals for all systems. 'Response time' is specifically a critical goal for Interactive Systems, but not necessarily a primary goal for Batch Systems."
+            },
+            "vi": {
+                "question": "Tiêu chí nào KHÔNG PHẢI là mục tiêu chung của thuật toán lập lịch cho mọi loại hệ thống?",
+                "options": ["A. Thời gian phản hồi (Response time)", "B. Thực thi chính sách (Policy enforcement)", "C. Cân bằng (Balance)", "D. Công bằng (Fairness)"],
+                "answer": "A. Thời gian phản hồi (Response time)",
+                "explanation": "Công bằng, Cân bằng tài nguyên và Thực thi chính sách là mục tiêu chung cho MỌI hệ thống. Tuy nhiên, 'Thời gian phản hồi nhanh' chỉ là mục tiêu tối quan trọng của Hệ thống Tương tác (Interactive Systems), không phải của Hệ thống Xử lý lô (Batch Systems)."
+            }
+        },
+        {
+            "id": 113,
+            "topic": "Process & Threads",
+            "en": {
+                "question": "What is the 'sequential processes' concept?",
+                "options": ["A. There are both many CPU and many PC", "B. All process is executed in concurrency", "C. No concurrency inside a process; everything happens sequentially", "D. None of the other choices"],
+                "answer": "C. No concurrency inside a process; everything happens sequentially",
+                "explanation": "A sequential process executes its instructions strictly one by one in order, with no internal parallel execution or threading."
+            },
+            "vi": {
+                "question": "Khái niệm 'tiến trình tuần tự' (sequential processes) là gì?",
+                "options": ["A. Có nhiều CPU và nhiều PC", "B. Tất cả tiến trình được thực thi đồng thời", "C. Không có sự đồng thời bên trong một tiến trình; mọi thứ diễn ra tuần tự", "D. Không có lựa chọn nào khác"],
+                "answer": "C. Không có sự đồng thời bên trong một tiến trình; mọi thứ diễn ra tuần tự",
+                "explanation": "Trong một tiến trình tuần tự, các tập lệnh được bộ vi xử lý chạy lần lượt từ trên xuống dưới, không có luồng (thread) nào chạy song song bên trong nó."
+            }
+        },
+        {
+            "id": 114,
+            "topic": "OS Overview & Architecture",
+            "en": {
+                "question": "A simple structuring model for monolithic system includes:",
+                "options": ["A. A main program that invokes the requested service procedure", "B. A set of service procedures that carry out the system calls", "C. A set of utility procedures that help the service procedures", "D. All of the other choices"],
+                "answer": "D. All of the other choices",
+                "explanation": "A traditional monolithic OS structure consists of a main program to invoke services, service procedures to handle system calls, and utility procedures to support the service procedures."
+            },
+            "vi": {
+                "question": "Một mô hình cấu trúc đơn giản cho hệ thống nguyên khối (monolithic system) bao gồm:",
+                "options": ["A. Một chương trình chính gọi thủ tục dịch vụ được yêu cầu", "B. Một tập hợp các thủ tục dịch vụ thực hiện các System Calls", "C. Một tập hợp các thủ tục tiện ích (utility) hỗ trợ cho các thủ tục dịch vụ", "D. Tất cả các lựa chọn trên"],
+                "answer": "D. Tất cả các lựa chọn trên",
+                "explanation": "HĐH nguyên khối truyền thống được tổ chức thành 3 phần: Chương trình chính (nhận request), các hàm dịch vụ (thực thi request System Call) và các hàm tiện ích (hỗ trợ các hàm dịch vụ)."
+            }
+        },
+        {
+            "id": 115,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "Of the three components of access time in a disk,_____is the longest.",
+                "options": ["A. Seek time", "B. Search time", "C. Transfer time", "D. Delay time"],
+                "answer": "A. Seek time",
+                "explanation": "Seek time involves the physical mechanical movement of the disk arm/head to the correct cylinder, which is much slower compared to rotational delay or the actual electronic data transfer."
+            },
+            "vi": {
+                "question": "Trong ba thành phần cấu thành thời gian truy cập đĩa, _____ là khoảng thời gian lâu nhất.",
+                "options": ["A. Thời gian tìm kiếm (Seek time)", "B. Thời gian dò tìm (Search time)", "C. Thời gian truyền dữ liệu (Transfer time)", "D. Thời gian trễ (Delay time)"],
+                "answer": "A. Thời gian tìm kiếm (Seek time)",
+                "explanation": "Seek time là thời gian cơ học để cánh tay từ của ổ đĩa HDD di chuyển vật lý đến đúng rãnh (cylinder) chứa dữ liệu. Quá trình cơ học này mất nhiều thời gian nhất so với độ trễ quay đĩa hay thời gian truyền tải tín hiệu điện."
+            }
+        },
+        {
+            "id": 116,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "Which of the following is not a well-known technique for organizing the physical storage blocks for a file?",
+                "options": ["A. Contiguous block allocation", "B. Linked list block allocation", "C. Sparse block allocation", "D. Indexed block allocation"],
+                "answer": "C. Sparse block allocation",
+                "explanation": "Contiguous, Linked List, and Indexed are the three standard classical methods for allocating disk blocks to a file. 'Sparse block allocation' is not a standard term for a base allocation method."
+            },
+            "vi": {
+                "question": "Kỹ thuật nào sau đây KHÔNG PHẢI là kỹ thuật phổ biến để tổ chức lưu trữ các khối vật lý cho một tệp?",
+                "options": ["A. Cấp phát khối liên tục (Contiguous)", "B. Cấp phát danh sách liên kết (Linked list)", "C. Cấp phát khối thưa thớt (Sparse block)", "D. Cấp phát khối có chỉ mục (Indexed)"],
+                "answer": "C. Cấp phát khối thưa thớt (Sparse block)",
+                "explanation": "Liên tục, Liên kết và Chỉ mục là 3 phương pháp tiêu chuẩn kinh điển nhất để HĐH cấp phát khối đĩa cho tệp. 'Sparse block allocation' không phải là tên một phương pháp cấp phát cơ sở chuẩn."
+            }
+        },
+        {
+            "id": 117,
+            "topic": "OS Overview & Architecture",
+            "en": {
+                "question": "A CPU may have multiple execution units, so that can carry out multiple instructions in the same time is called:",
+                "options": ["A. Pipeline", "B. Superscalar", "C. Multicore", "D. None of the other choices"],
+                "answer": "B. Superscalar",
+                "explanation": "Superscalar architecture allows a single CPU core to execute more than one instruction per clock cycle by dispatching multiple instructions to redundant execution units."
+            },
+            "vi": {
+                "question": "Một CPU có thể có nhiều đơn vị thực thi, nhờ đó có thể xử lý nhiều tập lệnh cùng một lúc. Kiến trúc này được gọi là:",
+                "options": ["A. Đường ống (Pipeline)", "B. Siêu vô hướng (Superscalar)", "C. Đa lõi (Multicore)", "D. Không có lựa chọn nào đúng"],
+                "answer": "B. Siêu vô hướng (Superscalar)",
+                "explanation": "Kiến trúc siêu vô hướng (Superscalar) trang bị nhiều bộ xử lý chức năng bên trong một lõi CPU, cho phép nó giải quyết nhiều lệnh song song trong cùng một nhịp đồng hồ."
+            }
+        },
+        {
+            "id": 118,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "Which classes of I/O devices that Clock belong to?",
+                "options": ["A. Stream devices", "B. Block devices", "C. Character devices", "D. None of the other choices"],
+                "answer": "D. None of the other choices",
+                "explanation": "Clocks/Timers are a unique category. They do not send or receive character streams like mice/keyboards (character devices) nor do they store blocks of data like disks (block devices). They just issue interrupts at intervals."
+            },
+            "vi": {
+                "question": "Đồng hồ (Clock) thuộc loại thiết bị I/O nào?",
+                "options": ["A. Thiết bị dạng luồng (Stream)", "B. Thiết bị dạng khối (Block)", "C. Thiết bị dạng ký tự (Character)", "D. Không có lựa chọn nào đúng"],
+                "answer": "D. Không có lựa chọn nào đúng",
+                "explanation": "Đồng hồ/Bộ định thời không thuộc nhóm thiết bị Khối (như ổ đĩa) cũng không thuộc thiết bị Ký tự (như chuột, bàn phím). Nó là một loại phần cứng đặc biệt chỉ có nhiệm vụ đếm thời gian và phát ra các ngắt định kỳ."
+            }
+        },
+        {
+            "id": 119,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "Which concept is described as disk sectors are just numbered consecutively starting at 0, without regard to the disk geometry?",
+                "options": ["A. Logical block addressing", "B. Physical block addressing", "C. Virtual block addressing", "D. None of the other choices"],
+                "answer": "A. Logical block addressing",
+                "explanation": "Logical Block Addressing (LBA) is an abstraction where the OS views the disk simply as a linear array of blocks numbered 0, 1, 2... rather than dealing with cylinders, heads, and sectors (CHS)."
+            },
+            "vi": {
+                "question": "Khái niệm nào mô tả việc các sector của đĩa chỉ được đánh số liên tục bắt đầu từ 0, mà không cần quan tâm đến cấu trúc hình học vật lý của đĩa?",
+                "options": ["A. Đánh địa chỉ khối logic (Logical block addressing - LBA)", "B. Đánh địa chỉ khối vật lý (Physical block addressing)", "C. Đánh địa chỉ khối ảo", "D. Không có lựa chọn nào đúng"],
+                "answer": "A. Đánh địa chỉ khối logic (Logical block addressing - LBA)",
+                "explanation": "Thay vì phải nhớ đĩa có bao nhiêu rãnh, bao nhiêu đầu đọc (cấu trúc Cylinder-Head-Sector), HĐH hiện đại dùng LBA để xem ổ cứng như một mảng dài liên tục các khối được đánh số từ 0 đến N."
+            }
+        },
+        {
+            "id": 120,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "Which is the maximum partition size, if the FAT type is FAT-32 and the block size is 4 KB?",
+                "options": ["A. 1 TB", "B. 128 MB", "C. 256 MB", "D. 512 MB"],
+                "answer": "A. 1 TB",
+                "explanation": "FAT-32 uses 28 bits for addressing clusters (blocks). The max number of blocks is 2^28. Total size = (2^28) * 4 KB = 2^30 KB, which equals 1 Terabyte (TB)."
+            },
+            "vi": {
+                "question": "Kích thước phân vùng tối đa là bao nhiêu nếu sử dụng FAT-32 và kích thước mỗi khối (block) là 4 KB?",
+                "options": ["A. 1 TB", "B. 128 MB", "C. 256 MB", "D. 512 MB"],
+                "answer": "A. 1 TB",
+                "explanation": "Hệ thống FAT-32 dùng 28 bit để đánh địa chỉ. Số khối tối đa là 2^28. Kích thước phân vùng tối đa = Số lượng khối * Dung lượng 1 khối = 2^28 * 4 KB = 2^30 KB, tương đương chính xác 1 Terabyte (TB)."
+            }
+        },
+        {
+            "id": 121,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "Which of the following is specified to indicate the directory where the file is located?",
+                "options": ["A. Extension", "B. Path name", "C. Root directory", "D. Sub-directory"],
+                "answer": "B. Path name",
+                "explanation": "The path name (e.g., /usr/bin/file.txt) completely specifies the sequence of directories to traverse to locate a specific file."
+            },
+            "vi": {
+                "question": "Cái nào sau đây được chỉ định để xác định thư mục nơi một tệp đang nằm?",
+                "options": ["A. Phần mở rộng (Extension)", "B. Đường dẫn (Path name)", "C. Thư mục gốc (Root directory)", "D. Thư mục con (Sub-directory)"],
+                "answer": "B. Đường dẫn (Path name)",
+                "explanation": "Đường dẫn (Path name) là chuỗi vị trí cụ thể (ví dụ: C:\\Users\\Document\\file.txt) giúp HĐH xác định chính xác tệp đó nằm ở thư mục nào trong hệ thống."
+            }
+        },
+        {
+            "id": 122,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "Device Driver is usually written by:",
+                "options": ["A. Device's Manufacturer", "B. OS's Manufacturer", "C. Computer's Manufacturer", "D. All of the other choices"],
+                "answer": "A. Device's Manufacturer",
+                "explanation": "Because device drivers need intimate, low-level knowledge of the specific hardware's inner workings, they are almost always written by the hardware (device) manufacturer."
+            },
+            "vi": {
+                "question": "Trình điều khiển thiết bị (Device Driver) thường được viết bởi ai?",
+                "options": ["A. Nhà sản xuất thiết bị (Hardware Manufacturer)", "B. Nhà sản xuất HĐH (OS Manufacturer)", "C. Nhà sản xuất máy tính", "D. Tất cả các lựa chọn trên"],
+                "answer": "A. Nhà sản xuất thiết bị (Hardware Manufacturer)",
+                "explanation": "Bởi vì Driver cần giao tiếp trực tiếp với các tín hiệu vi mạch của phần cứng, nó cần hiểu phần cứng tới tận 'chân tơ kẽ tóc', nên thường do chính công ty sản xuất ra phần cứng đó (như Nvidia, Intel, Logitech...) lập trình."
+            }
+        },
+        {
+            "id": 123,
+            "topic": "Memory Management",
+            "en": {
+                "question": "A computer with a 32-bit address uses a two-level page table. Virtual addresses are split into a 10-bit top-level page table field, an 11-bit second-level page table field, and an offset. How large are the pages?",
+                "options": ["A. 4-KB page", "B. 2-KB page", "C. 1-KB page", "D. 512B page"],
+                "answer": "B. 2-KB page",
+                "explanation": "Total address = 32 bits. Offset = 32 - 10 (top) - 11 (second) = 11 bits. The page size is 2^Offset_bits = 2^11 bytes = 2048 bytes = 2 KB."
+            },
+            "vi": {
+                "question": "Một máy tính có địa chỉ 32-bit dùng bảng trang 2 cấp. Địa chỉ ảo được chia thành 10-bit cho bảng cấp 1, 11-bit cho bảng cấp 2, và phần còn lại là độ lệch (offset). Kích thước mỗi trang là bao nhiêu?",
+                "options": ["A. 4-KB", "B. 2-KB", "C. 1-KB", "D. 512B"],
+                "answer": "B. 2-KB",
+                "explanation": "Tổng số bit là 32. Số bit dành cho Offset = 32 - 10 - 11 = 11 bit. Kích thước của trang được quy định bởi Offset: 2^11 byte = 2048 byte = 2 KB."
+            }
+        },
+        {
+            "id": 124,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "The disk block in a partition that includes a magic number, the number of blocks in the file system and other key administrative information is called:",
+                "options": ["A. Free block", "B. MBR", "C. Boot block", "D. Superblock"],
+                "answer": "D. Superblock",
+                "explanation": "The Superblock contains the critical metadata about the file system itself, such as its size, free block count, and a magic number to identify the file system type."
+            },
+            "vi": {
+                "question": "Khối đĩa trong một phân vùng chứa 'magic number' (số ma thuật), tổng số khối của hệ thống tệp và các thông tin quản trị quan trọng khác được gọi là:",
+                "options": ["A. Khối trống (Free block)", "B. Bản ghi khởi động chính (MBR)", "C. Khối khởi động (Boot block)", "D. Siêu khối (Superblock)"],
+                "answer": "D. Siêu khối (Superblock)",
+                "explanation": "Siêu khối (Superblock) là nơi lưu trữ 'giấy khai sinh' của một phân vùng hệ thống tệp, chứa mọi thông số meta như: số lượng block, loại hệ thống tệp (thông qua magic number)."
+            }
+        },
+        {
+            "id": 125,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "Assume jobs A-D arrive in quick succession in the READY queue. Using round robin scheduling (quantum=4), the average turnaround time for each job is<br>Arrival time: 0 1 2 3<br>Job: A B C D<br>CPU cycle: 8 4 9 5",
+                "options": ["A. 18.25", "B. 73", "C. 20", "D. 5"],
+                "answer": "A. 18.25",
+                "explanation": "Gantt chart (Q=4): A(0-4), B(4-8 finish), C(8-12), D(12-16), A(16-20 finish), C(20-24), D(24-25 finish), C(25-26 finish). Turnaround times = Completion - Arrival. A:20-0=20. B:8-1=7. C:26-2=24. D:25-3=22. Average = (20+7+24+22)/4 = 73/4 = 18.25."
+            },
+            "vi": {
+                "question": "Giả sử các tiến trình A-D đến liên tiếp vào hàng đợi Sẵn sàng. Dùng thuật toán lập lịch Round Robin (quantum=4), thời gian lưu lại hệ thống (turnaround time) trung bình là bao nhiêu?<br>TG đến: 0 1 2 3<br>Tiến trình: A B C D<br>TG chạy: 8 4 9 5",
+                "options": ["A. 18.25", "B. 73", "C. 20", "D. 5"],
+                "answer": "A. 18.25",
+                "explanation": "Tiến trình xoay vòng cắt 4đv: A chạy(0-4), B chạy(4-8 xong). C chạy(8-12), D chạy(12-16). Vòng 2: A chạy(16-20 xong). C chạy(20-24). D chạy(24-25 xong). C chạy nốt 1đv cuối(25-26 xong). TG lưu lại = TG hoàn thành - TG đến. A=20-0=20; B=8-1=7; C=26-2=24; D=25-3=22. Trung bình = (20+7+24+22)/4 = 18.25."
+            }
+        },
+        {
+            "id": 126,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "Which of the following statement is not true about separating I/O and memory space?",
+                "options": ["A. Device drivers must be written using assembly language", "B. Programs must use 2 instructions to test whether the device is ready", "C. There is special protection mechanism to keep user processes from performing I/O", "D. Caching a device control register would be disastrous"],
+                "answer": "D. Caching a device control register would be disastrous",
+                "explanation": "Wait, the key says D is not true. However, caching a device register IS actually disastrous. The original text answer key marks D, so we adhere to the source material strictly."
+            },
+            "vi": {
+                "question": "Phát biểu nào sau đây KHÔNG đúng khi nói về kiến trúc tách biệt không gian I/O và không gian bộ nhớ?",
+                "options": ["A. Driver phải được viết bằng Assembly", "B. Chương trình cần 2 tập lệnh để kiểm tra thiết bị sẵn sàng", "C. Cần cơ chế bảo vệ đặc biệt để ngăn user gọi I/O", "D. Lưu đệm (cache) thanh ghi điều khiển thiết bị sẽ gây ra thảm họa"],
+                "answer": "D. Lưu đệm (cache) thanh ghi điều khiển thiết bị sẽ gây ra thảm họa",
+                "explanation": "Mặc dù về lý thuyết, việc cache thanh ghi I/O thực sự sẽ gây lỗi dữ liệu, nhưng đáp án gốc quy định chọn D. Chúng ta giữ nguyên đáp án theo tài liệu."
+            }
+        },
+        {
+            "id": 127,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "The scheme of_____removes the possibility of a circular wait and therefore guarantees the removal of deadlocks.",
+                "options": ["A. Hierarchical ordering", "B. Preemption", "C. Saving and restoring job state", "D. Requesting all resources before job run"],
+                "answer": "A. Hierarchical ordering",
+                "explanation": "Hierarchical (numerical) ordering of resources requires processes to request resources in a strictly increasing numerical order. This mathematical rule makes it impossible for a circular wait cycle to form, thus preventing deadlocks."
+            },
+            "vi": {
+                "question": "Phương pháp nào sau đây loại bỏ được nguy cơ chờ đợi vòng tròn (circular wait) và qua đó đảm bảo không xảy ra Deadlock?",
+                "options": ["A. Sắp xếp thứ bậc (Hierarchical ordering)", "B. Tước đoạt tài nguyên (Preemption)", "C. Lưu và khôi phục trạng thái", "D. Yêu cầu tất cả tài nguyên trước khi chạy"],
+                "answer": "A. Sắp xếp thứ bậc (Hierarchical ordering)",
+                "explanation": "Sắp xếp thứ bậc ép các tiến trình phải xin tài nguyên theo số thứ tự tăng dần. Quy tắc một chiều này sẽ chặt đứt bất kỳ chu trình vòng tròn nào (ví dụ A giữ 1 xin 2, B giữ 2 không thể xin ngược lại 1), giúp chặn đứng Deadlock."
+            }
+        },
+        {
+            "id": 128,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "Which are the tasks of clock driver for the clock software in the computer:",
+                "options": ["A. Maintaining the time of day", "B. Accounting CPU usage", "C. Handling the alarm system call made by user processes", "D. All of the other choices"],
+                "answer": "D. All of the other choices",
+                "explanation": "The clock software is responsible for updating the time of day, enforcing CPU time limits/accounting for processes, and managing watchdog timers/alarms requested by software."
+            },
+            "vi": {
+                "question": "Nhiệm vụ của phần mềm điều khiển đồng hồ (clock driver) trong máy tính là gì?",
+                "options": ["A. Duy trì thời gian trong ngày", "B. Tính toán, thống kê thời gian sử dụng CPU của tiến trình", "C. Xử lý các lệnh gọi hệ thống báo thức (alarm) từ người dùng", "D. Tất cả các lựa chọn trên"],
+                "answer": "D. Tất cả các lựa chọn trên",
+                "explanation": "Phần mềm quản lý đồng hồ của OS đảm đương mọi việc liên quan đến thời gian: cập nhật giờ hệ thống, đếm thời gian CPU đã cấp cho một tiến trình, và kích hoạt các bộ hẹn giờ (alarm/watchdog)."
+            }
+        },
+        {
+            "id": 129,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "What is the way to recover from a deadlock:",
+                "options": ["A. Preempt a resource", "B. Rollback", "C. Killing processes", "D. All of the other choices"],
+                "answer": "D. All of the other choices",
+                "explanation": "When a deadlock is detected, the OS can recover by temporarily preempting a resource, rolling back a process to a safe checkpoint, or drastically killing one or more processes to break the cycle."
+            },
+            "vi": {
+                "question": "Cách để phục hồi hệ thống khi xảy ra Deadlock là:",
+                "options": ["A. Tước đoạt tài nguyên", "B. Quay lui trạng thái (Rollback)", "C. Tiêu diệt tiến trình", "D. Tất cả các lựa chọn trên"],
+                "answer": "D. Tất cả các lựa chọn trên",
+                "explanation": "Khi phát hiện Deadlock, HĐH có 3 cách giải quyết mạnh tay: tước đoạt tài nguyên của một bên, khôi phục tiến trình về một điểm an toàn trước đó, hoặc đơn giản nhất là 'giết' một/nhiều tiến trình để gỡ rối."
+            }
+        },
+        {
+            "id": 130,
+            "topic": "OS Overview & Architecture",
+            "en": {
+                "question": "What is not correct about system calls?",
+                "options": ["A. A system call allows a user process to assess and execute operating system functions inside the kernel.", "B. User programs use system calls to invoke operating system services", "C. In terms of performance, using system calls is better than using procedure calls", "D. Every system call involves overhead due to context switch"],
+                "answer": "C. In terms of performance, using system calls is better than using procedure calls",
+                "explanation": "System calls are significantly slower than standard procedure (function) calls because they require a context switch from user mode to kernel mode, saving states, and verifying permissions."
+            },
+            "vi": {
+                "question": "Điều nào KHÔNG ĐÚNG khi nói về lời gọi hệ thống (System calls)?",
+                "options": ["A. Cho phép tiến trình người dùng thực thi các hàm HĐH bên trong lõi kernel.", "B. Các chương trình dùng System call để yêu cầu HĐH phục vụ.", "C. Về mặt hiệu suất, sử dụng System call sẽ nhanh hơn so với gọi hàm thông thường (procedure calls).", "D. Mỗi System call đều tốn chi phí thời gian do việc chuyển ngữ cảnh (context switch)."],
+                "answer": "C. Về mặt hiệu suất, sử dụng System call sẽ nhanh hơn so với gọi hàm thông thường (procedure calls).",
+                "explanation": "Thực tế thì System call CHẬM HƠN RẤT NHIỀU so với gọi hàm bình thường vì nó phải tốn chi phí thực hiện chuyển đổi trạng thái CPU từ User mode sang Kernel mode."
+            }
+        },
+        {
+            "id": 131,
+            "topic": "Scheduling & Deadlocks",
+            "en": {
+                "question": "What is true about preemptable resources?",
+                "options": ["A. Will cause the process to fail if taken away", "B. Can be taken away from a process with no ill effects", "C. Can share among processes", "D. None of the other choices"],
+                "answer": "B. Can be taken away from a process with no ill effects",
+                "explanation": "A preemptable resource (like CPU memory) is one that can be safely taken from its current owner and given back later without causing the process to fail or producing corrupt data."
+            },
+            "vi": {
+                "question": "Điều kiện nào là đúng về tài nguyên có thể tước đoạt (preemptable resources)?",
+                "options": ["A. Sẽ làm tiến trình thất bại nếu bị tước đi", "B. Có thể tước đoạt khỏi tiến trình mà không gây ra tác hại nào", "C. Có thể được chia sẻ giữa các tiến trình", "D. Không có lựa chọn nào đúng"],
+                "answer": "B. Có thể tước đoạt khỏi tiến trình mà không gây ra tác hại nào",
+                "explanation": "Tài nguyên có thể tước đoạt (ví dụ RAM, CPU) là loại tài nguyên HĐH có thể lấy đi tạm thời và trả lại sau mà tiến trình vẫn hoạt động bình thường, không sinh lỗi."
+            }
+        },
+        {
+            "id": 132,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "Programmed I/O should be acceptable for which of the following systems?",
+                "options": ["A. Interactive systems", "B. Multiprogramming systems", "C. Embedded systems", "D. None of the other choices"],
+                "answer": "D. None of the other choices",
+                "explanation": "Technically, Programmed I/O (which completely ties up the CPU with busy waiting) is highly inefficient for modern operating systems. The provided key selects 'None of the other choices'."
+            },
+            "vi": {
+                "question": "Loại hệ thống nào sau đây có thể chấp nhận sử dụng kỹ thuật Programmed I/O (I/O có lập trình)?",
+                "options": ["A. Hệ thống tương tác (Interactive)", "B. Hệ thống đa chương (Multiprogramming)", "C. Hệ thống nhúng (Embedded)", "D. Không có hệ thống nào trong số trên"],
+                "answer": "D. Không có hệ thống nào trong số trên",
+                "explanation": "Programmed I/O sử dụng kỹ thuật 'busy waiting' khiến CPU bị lãng phí hoàn toàn để chờ thiết bị phản hồi. Theo đáp án gốc của đề bài, nó không nên dùng cho các hệ thống trên."
+            }
+        },
+        {
+            "id": 133,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "Which is not a DVD Improvement on CDs to increase the capacity?",
+                "options": ["A. Smaller pits", "B. A tighter spiral", "C. A kind laser (red, blue)", "D. Diameter of disc"],
+                "answer": "D. Diameter of disc",
+                "explanation": "Both standard CDs and DVDs have the same physical diameter (120mm). DVDs achieve higher capacity through smaller pits, tighter spiral tracks, and using different laser wavelengths, not by making the disc physically larger."
+            },
+            "vi": {
+                "question": "Yếu tố nào KHÔNG PHẢI là một cải tiến của đĩa DVD so với đĩa CD để tăng dung lượng?",
+                "options": ["A. Lõm đĩa (pits) nhỏ hơn", "B. Rãnh xoắn ốc khít nhau hơn", "C. Dùng loại tia laser khác (đỏ, xanh)", "D. Thay đổi đường kính của đĩa"],
+                "answer": "D. Thay đổi đường kính của đĩa",
+                "explanation": "Cả đĩa CD và DVD đều có chung một kích thước đường kính vật lý là 12 cm. DVD chứa được nhiều dữ liệu hơn là nhờ rãnh ghi sát nhau hơn và chấm laser nhỏ hơn chứ không phải do đĩa to ra."
+            }
+        },
+        {
+            "id": 134,
+            "topic": "Process & Threads",
+            "en": {
+                "question": "Which of the events that causes the processes to be created, when a running process creates one or more new process to help it to do its job?",
+                "options": ["A. System initialization", "B. Execution of a process creation system call", "C. User request to create a new process", "D. Initiation of a batch job"],
+                "answer": "D. Initiation of a batch job",
+                "explanation": "According to the provided question key, this maps to 'Initiation of a batch job', though theoretically it sounds like a 'Process creation system call'. We strictly follow the provided key."
+            },
+            "vi": {
+                "question": "Sự kiện nào gây ra việc tạo tiến trình, khi một tiến trình đang chạy tạo ra thêm tiến trình mới để giúp nó xử lý công việc?",
+                "options": ["A. Khởi tạo hệ thống", "B. Gọi lệnh tạo tiến trình của hệ thống (System call)", "C. Yêu cầu tạo tiến trình mới từ người dùng", "D. Bắt đầu một công việc xử lý lô (batch job)"],
+                "answer": "D. Bắt đầu một công việc xử lý lô (batch job)",
+                "explanation": "Lưu ý: Mặc dù nội dung câu hỏi rất giống việc gọi hàm sinh tiến trình (B), nhưng đáp án gốc của đề chỉ định là D. Để khớp với bài thi, ta duy trì đáp án gốc."
+            }
+        },
+        {
+            "id": 135,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "What is interrupt vector?",
+                "options": ["A. A signal an I/O device sends to CPU", "B. The addresses of interrupt handlers", "C. Part of memory which contains the addresses of interrupt handlers", "D. None of the other choices"],
+                "answer": "C. Part of memory which contains the addresses of interrupt handlers",
+                "explanation": "An interrupt vector is an array (or table) stored in a specific location in memory that holds the memory addresses of the various interrupt service routines (handlers)."
+            },
+            "vi": {
+                "question": "Vector ngắt (interrupt vector) là gì?",
+                "options": ["A. Một tín hiệu mà thiết bị I/O gửi cho CPU", "B. Địa chỉ của các trình xử lý ngắt", "C. Một phần của bộ nhớ chứa danh sách địa chỉ các trình xử lý ngắt", "D. Không có lựa chọn nào đúng"],
+                "answer": "C. Một phần của bộ nhớ chứa danh sách địa chỉ các trình xử lý ngắt",
+                "explanation": "Vector ngắt là một bảng (được lưu tại vùng nhớ cố định dưới kernel) chứa các con trỏ địa chỉ. Khi có ngắt, CPU sẽ tra bảng này để biết cần nhảy tới đoạn code nào để xử lý ngắt đó."
+            }
+        },
+        {
+            "id": 136,
+            "topic": "Memory Management",
+            "en": {
+                "question": "The second-chance page-replacement algorithm:",
+                "options": ["A. Moves pages found at the head of a FIFO queue with the referenced bit turned on back to the tail of the queue to avoid replacing them", "B. Searches through a circular list of pages and replaces the first page it encounters that has the referenced bit turned off", "C. Relies on a modified bit to determine which page to replace", "D. None of the other choices"],
+                "answer": "A. Moves pages found at the head of a FIFO queue with the referenced bit turned on back to the tail of the queue to avoid replacing them",
+                "explanation": "Second-chance is a modification of FIFO. If the oldest page has its Reference bit set to 1, the OS resets the bit to 0 and moves it to the back of the queue, giving it a 'second chance' instead of evicting it."
+            },
+            "vi": {
+                "question": "Thuật toán thay thế trang cơ hội thứ hai (Second-chance):",
+                "options": ["A. Đẩy các trang ở đầu hàng đợi FIFO có bit tham chiếu bằng 1 xuống cuối hàng đợi để tránh bị thay thế", "B. Tìm kiếm qua một danh sách vòng tròn các trang...", "C. Phụ thuộc vào bit 'modified' để quyết định thay trang nào", "D. Không có lựa chọn nào đúng"],
+                "answer": "A. Đẩy các trang ở đầu hàng đợi FIFO có bit tham chiếu bằng 1 xuống cuối hàng đợi để tránh bị thay thế",
+                "explanation": "Đây là bản nâng cấp của FIFO. Nếu trang cũ nhất sắp bị đuổi nhưng HĐH thấy nó vừa mới được truy cập (Bit R=1), HĐH sẽ xóa bit đó về 0 và đẩy nó lại xuống cuối hàng đợi, tha cho nó 1 lần 'cơ hội thứ 2'."
+            }
+        },
+        {
+            "id": 137,
+            "topic": "Memory Management",
+            "en": {
+                "question": "Which strategy is a simplest design for speeding up Paging?",
+                "options": ["A. Page table is loaded into registers", "B. Page table is loaded into main memory", "C. Page table is loaded into disk", "D. Page table is loaded into TLB"],
+                "answer": "A. Page table is loaded into registers",
+                "explanation": "Loading the entire page table into high-speed hardware registers is the conceptually simplest way to speed up address translation, but it's only practical for very small page tables."
+            },
+            "vi": {
+                "question": "Chiến lược nào là thiết kế đơn giản nhất để tăng tốc độ Phân trang (Paging)?",
+                "options": ["A. Tải toàn bộ Bảng trang vào Thanh ghi (Registers)", "B. Tải Bảng trang vào bộ nhớ chính", "C. Tải Bảng trang vào ổ đĩa", "D. Tải Bảng trang vào TLB"],
+                "answer": "A. Tải toàn bộ Bảng trang vào Thanh ghi (Registers)",
+                "explanation": "Về mặt thiết kế cơ bản, việc đưa thẳng bảng trang vào các thanh ghi phần cứng cực nhanh của CPU là cách đơn giản nhất để đạt hiệu năng tối đa (dù không thực tế nếu bảng trang quá lớn)."
+            }
+        },
+        {
+            "id": 138,
+            "topic": "I/O Systems",
+            "en": {
+                "question": "The main bus in the IBM PC computer are:",
+                "options": ["A. ISA (Industry Standard Architecture)", "B. PCI (Peripheral Component Interconnect)", "C. ISA and PCI", "D. None of the other choices"],
+                "answer": "C. ISA and PCI",
+                "explanation": "Historically, the standard expansion buses utilized in IBM PC architectures included both the older ISA bus and the newer, faster PCI bus."
+            },
+            "vi": {
+                "question": "Bus chính trong các máy tính cá nhân IBM (IBM PC) là:",
+                "options": ["A. ISA", "B. PCI", "C. Cả ISA và PCI", "D. Không có lựa chọn nào đúng"],
+                "answer": "C. Cả ISA và PCI",
+                "explanation": "Trong lịch sử phát triển của kiến trúc máy tính IBM PC, hệ thống từng tích hợp và sử dụng phổ biến cả hai loại bus mở rộng là ISA (cũ, chậm) và PCI (mới, nhanh hơn)."
+            }
+        },
+        {
+            "id": 139,
+            "topic": "File Systems & Storage",
+            "en": {
+                "question": "In the context of a file system, how many letters do all current operating systems allow as legal file names?",
+                "options": ["A. Zero to eight", "B. One to ten", "C. One to eight", "D. One to nine"],
+                "answer": "C. One to eight",
+                "explanation": "This refers to the legacy 8.3 filename convention from MS-DOS, which historically restricted file names to a maximum of 8 characters (plus a 3-character extension)."
+            },
+            "vi": {
+                "question": "Trong ngữ cảnh của hệ thống tệp, các HĐH hiện hành cho phép tên tệp hợp pháp dài tối đa bao nhiêu ký tự? (Theo kiến thức máy tính cũ)",
+                "options": ["A. Từ 0 đến 8", "B. Từ 1 đến 10", "C. Từ 1 đến 8", "D. Từ 1 đến 9"],
+                "answer": "C. Từ 1 đến 8",
+                "explanation": "Đáp án này dựa trên quy ước đặt tên tệp 8.3 cổ điển của MS-DOS (giới hạn tên tệp tối đa 8 ký tự và đuôi mở rộng 3 ký tự). Mặc dù HĐH nay đã cho phép 255 ký tự, đề vẫn lấy quy chuẩn cũ."
+            }
+        },
+        {
+            "id": 140,
+            "topic": "OS Overview & Architecture",
+            "en": {
+                "question": "What part of the boot process determines whether the peripheral devices are working properly?",
+                "options": ["A. ROM", "B. CMOS", "C. BIOS", "D. POST"],
+                "answer": "D. POST",
+                "explanation": "POST (Power-On Self-Test) is the diagnostic testing sequence executed immediately after powering on a computer to ensure all critical peripheral devices and memory are functioning."
+            },
+            "vi": {
+                "question": "Phần nào trong quá trình khởi động (boot process) chịu trách nhiệm kiểm tra xem các thiết bị ngoại vi có hoạt động bình thường không?",
+                "options": ["A. ROM", "B. CMOS", "C. BIOS", "D. POST"],
+                "answer": "D. POST",
+                "explanation": "POST (Power-On Self-Test) là quá trình tự kiểm tra thiết bị khi vừa bật máy. Nhiệm vụ của nó là rà soát nhanh RAM, Bàn phím, Đĩa cứng... xem có lỗi phần cứng nào nghiêm trọng trước khi mồi hệ điều hành."
+            }
+        }
         // BẠN HÃY DÁN CÁC CÂU HỎI CÒN LẠI VÀO ĐÂY
     ];
 
