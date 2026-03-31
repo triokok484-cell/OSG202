@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn tập Lý thuyết Khoa học Máy tính</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .quiz-container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            padding: 25px 30px;
+        }
+        h1 {
+            color: #005691;
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+        .top-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        #chapter-select {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+        .question-container {
+            margin-bottom: 20px;
+        }
+        #question-text {
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        .answers-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .answer-btn {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 1em;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.2s, border-color 0.2s;
+            width: 100%;
+        }
+        .answer-btn:hover:not(:disabled) {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+        .answer-btn.correct {
+            background-color: #d1e7dd;
+            border-color: #a3cfbb;
+            color: #0a3622;
+        }
+        .answer-btn.incorrect {
+            background-color: #f8d7da;
+            border-color: #f1aeb5;
+            color: #58151c;
+        }
+        .answer-btn:disabled {
+            cursor: not-allowed;
+        }
+        #feedback {
+            margin-top: 15px;
+            font-size: 0.9em;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        #feedback.correct {
+            background-color: #e6ffec;
+            color: #096a23;
+        }
+        #feedback.incorrect {
+            background-color: #ffe6e6;
+            color: #a60000;
+        }
+        .bottom-controls {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        #next-btn, #restart-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        #next-btn:hover, #restart-btn:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+        .result-container {
+            text-align: center;
+        }
+        #no-questions-msg {
+            text-align: center;
+            color: #6c757d;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>Trắc nghiệm Lý thuyết CSI</h1>
+        
+        <div class="top-controls">
+            <label for="chapter-select">Ôn tập chương:</label>
+            <select id="chapter-select">
+                <option value="0">Tất cả các chương</option>
+                <option value="1">Chương 1 - Tổng quan</option>
+                <option value="2">Chương 2 - Hệ đếm</option>
+                <option value="3">Chương 3 - Lưu trữ dữ liệu</option>
+                <option value="4">Chương 4 - Phép toán</option>
+                <option value="5">Chương 5 - Tổ chức máy tính</option>
+                <option value="6">Chương 6 - Mạng máy tính</option>
+            </select>
+        </div>
+
+        <div id="quiz-view">
+            <div class="question-container">
+                <p id="question-text"></p>
+            </div>
+            <div id="answers-container" class="answers-container"></div>
+            <p id="no-questions-msg" class="hidden">Không có câu hỏi cho chương này.</p>
+            <div id="feedback" class="hidden"></div>
+            <div class="bottom-controls">
+                <button id="next-btn" class="hidden">Câu tiếp theo</button>
+            </div>
+        </div>
+
+        <div id="result-view" class="result-container hidden">
+            <h2>Hoàn thành!</h2>
+            <p id="score-text"></p>
+            <button id="restart-btn">Chọn chương khác</button>
+        </div>
+    </div>
+
+    <script>
+        const allQuizData = [
+            {
+                chapter: 1,
+                question: "Khái niệm 'Stored Program Concept' là đặc điểm cốt lõi của mô hình nào?",
+                answers: [ { text: "Mô hình Turing", correct: false }, { text: "Mô hình Von Neumann", correct: true }, { text: "Mô hình phân cấp bộ nhớ", correct: false }, { text: "Mô hình TCP/IP", correct: false } ],
+                explanation: "Stored Program Concept, tức chương trình và dữ liệu được lưu chung trong bộ nhớ, là phát kiến quan trọng nhất của mô hình Von Neumann."
+            },
+            {
+                chapter: 1,
+                question: "Thành phần nào sau đây KHÔNG thuộc 4 hệ thống con của mô hình Von Neumann?",
+                answers: [ { text: "Memory (Bộ nhớ)", correct: false }, { text: "Control Unit (Khối điều khiển)", correct: false }, { text: "Cache Memory", correct: true }, { text: "Input/Output", correct: false } ],
+                explanation: "4 hệ thống con gồm Memory, ALU, Control Unit, và I/O. Cache là một phần của hệ thống phân cấp bộ nhớ, không phải là một hệ thống con cơ bản trong mô hình này."
+            },
+            {
+                chapter: 2,
+                question: "Để biểu diễn (A9F)₁₆ trong hệ nhị phân, bạn cần bao nhiêu bit?",
+                answers: [ { text: "8 bit", correct: false }, { text: "12 bit", correct: true }, { text: "16 bit", correct: false }, { text: "10 bit", correct: false } ],
+                explanation: "Mỗi ký tự Hexadecimal tương đương với 4 bit. (A9F)₁₆ có 3 ký tự, vậy cần 3 * 4 = 12 bit."
+            },
+            {
+                chapter: 2,
+                question: "Số nhị phân (101101)₂ tương đương với số bát phân (Octal) nào?",
+                answers: [ { text: "(55)₈", correct: true }, { text: "(65)₈", correct: false }, { text: "(2D)₈", correct: false }, { text: "(45)₈", correct: false } ],
+                explanation: "Gom nhóm 3 bit từ phải sang: (101 101)₂. Ta có 101₂ = 5 và 101₂ = 5. Kết quả là (55)₈."
+            },
+            {
+                chapter: 3,
+                question: "Trong chuẩn IEEE 754 để biểu diễn số thực, phần Exponent (số mũ) được lưu trữ theo dạng nào?",
+                answers: [ { text: "Two's Complement", correct: false }, { text: "Sign-and-Magnitude", correct: false }, { text: "Dạng Excess (thiên vị)", correct: true }, { text: "Unsigned integer", correct: false } ],
+                explanation: "Dạng Excess (hay Biased) được dùng để lưu số mũ, cho phép biểu diễn cả số mũ âm và dương mà không cần bit dấu riêng."
+            },
+            {
+                chapter: 3,
+                question: "Biểu diễn Two's Complement 8-bit của số -1 là gì?",
+                answers: [ { text: "10000001", correct: false }, { text: "11111111", correct: true }, { text: "01111111", correct: false }, { text: "10000000", correct: false } ],
+                explanation: "Số 1 là 00000001. Đảo bit (bù 1) ta được 11111110. Cộng thêm 1 ta được 11111111."
+            },
+            {
+                chapter: 4,
+                question: "Để lật (flip) 4 bit cuối cùng của một byte 8-bit `D` mà không thay đổi 4 bit đầu, ta nên dùng phép toán nào?",
+                answers: [ { text: "D AND 00001111", correct: false }, { text: "D OR 00001111", correct: false }, { text: "D XOR 00001111", correct: true }, { text: "NOT D", correct: false } ],
+                explanation: "Phép XOR với 1 sẽ lật bit (0->1, 1->0), còn XOR với 0 sẽ giữ nguyên bit. Do đó, `D XOR 00001111` sẽ giữ nguyên 4 bit đầu và lật 4 bit cuối."
+            },
+            {
+                chapter: 4,
+                question: "Một số nguyên âm được lưu bằng 8-bit Two's Complement. Sau khi thực hiện phép 'Arithmetic Shift Right' 1 lần, giá trị của nó sẽ thay đổi như thế nào?",
+                answers: [ { text: "Chia cho 2 và làm tròn xuống", correct: true }, { text: "Nhân với 2", correct: false }, { text: "Trở thành số dương", correct: false }, { text: "Không thay đổi", correct: false } ],
+                explanation: "Arithmetic Shift Right tương đương với phép chia 2 (lấy phần nguyên). Đối với số âm, nó sẽ làm tròn xuống (ví dụ -5/2 = -2.5 -> -3)."
+            },
+            {
+                chapter: 5,
+                question: "Trong chu kỳ máy, thanh ghi nào chứa địa chỉ của lệnh TIẾP THEO sẽ được thực thi?",
+                answers: [ { text: "Instruction Register (IR)", correct: false }, { text: "Accumulator (AC)", correct: false }, { text: "Program Counter (PC)", correct: true }, { text: "Memory Address Register (MAR)", correct: false } ],
+                explanation: "Program Counter (PC) luôn trỏ đến địa chỉ của lệnh kế tiếp trong bộ nhớ. Sau mỗi lần Fetch, PC sẽ được cập nhật."
+            },
+            {
+                chapter: 5,
+                question: "Nguyên tắc hoạt động của bộ nhớ Cache là gì?",
+                answers: [ { text: "Lưu trữ vĩnh viễn dữ liệu", correct: false }, { text: "Lưu trữ bản sao của dữ liệu thường xuyên truy cập từ RAM", correct: true }, { text: "Thay thế hoàn toàn cho RAM", correct: false }, { text: "Điều khiển các thiết bị I/O", correct: false } ],
+                explanation: "Cache là bộ nhớ đệm tốc độ cao, nó lưu trữ tạm thời các dữ liệu và lệnh mà CPU có khả năng cần đến trong tương lai gần để giảm thời gian chờ đợi truy cập RAM."
+            },
+            {
+                chapter: 6,
+                question: "Giao thức nào ở tầng Transport đảm bảo tính tin cậy và truyền dữ liệu theo đúng thứ tự?",
+                answers: [ { text: "IP", correct: false }, { text: "UDP", correct: false }, { text: "TCP", correct: true }, { text: "HTTP", correct: false } ],
+                explanation: "TCP (Transmission Control Protocol) là giao thức hướng kết nối (connection-oriented), nó sử dụng cơ chế bắt tay, đánh số thứ tự gói tin và xác nhận để đảm bảo dữ liệu được truyền đi một cách tin cậy."
+            },
+             {
+                chapter: 6,
+                question: "Sự khác biệt chính giữa địa chỉ MAC và địa chỉ IP là gì?",
+                answers: [ { text: "MAC dùng ở tầng Network, IP dùng ở tầng Data Link", correct: false }, { text: "MAC là địa chỉ logic, IP là địa chỉ vật lý", correct: false }, { text: "MAC dùng cho mạng cục bộ (local), IP dùng cho mạng toàn cầu (global)", correct: true }, { text: "Không có sự khác biệt nào", correct: false } ],
+                explanation: "Địa chỉ MAC là định danh duy nhất của card mạng, chỉ có ý nghĩa trong một mạng LAN. Địa chỉ IP là địa chỉ logic, có tính toàn cầu, được dùng để các thiết bị tìm thấy nhau trên Internet."
+            }
+        ];
+
+        // Lấy các element từ HTML
+        const chapterSelect = document.getElementById('chapter-select');
+        const quizView = document.getElementById('quiz-view');
+        const resultView = document.getElementById('result-view');
+        const questionText = document.getElementById('question-text');
+        const answersContainer = document.getElementById('answers-container');
+        const feedback = document.getElementById('feedback');
+        const nextBtn = document.getElementById('next-btn');
+        const restartBtn = document.getElementById('restart-btn');
+        const scoreText = document.getElementById('score-text');
+        const noQuestionsMsg = document.getElementById('no-questions-msg');
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let filteredQuizData = [];
+
+        function startQuiz() {
+            const selectedChapter = parseInt(chapterSelect.value);
+            if (selectedChapter === 0) {
+                filteredQuizData = [...allQuizData];
+            } else {
+                filteredQuizData = allQuizData.filter(q => q.chapter === selectedChapter);
+            }
+
+            filteredQuizData.sort(() => Math.random() - 0.5);
+
+            currentQuestionIndex = 0;
+            score = 0;
+            quizView.style.display = 'block';
+            resultView.classList.add('hidden');
+            nextBtn.classList.add('hidden');
+
+            if (filteredQuizData.length > 0) {
+                questionText.style.display = 'block';
+                answersContainer.style.display = 'flex';
+                noQuestionsMsg.classList.add('hidden');
+                showQuestion();
+            } else {
+                resetState();
+                questionText.style.display = 'none';
+                answersContainer.style.display = 'none';
+                noQuestionsMsg.classList.remove('hidden');
+            }
+        }
+
+        function showQuestion() {
+            resetState();
+            const currentQuestion = filteredQuizData[currentQuestionIndex];
+            questionText.innerText = `Câu hỏi: ${currentQuestion.question}`;
+            
+            currentQuestion.answers.forEach(answer => {
+                const button = document.createElement('button');
+                button.innerText = answer.text;
+                button.classList.add('answer-btn');
+                button.addEventListener('click', () => selectAnswer(answer.correct, button));
+                answersContainer.appendChild(button);
+            });
+        }
+        
+        function resetState() {
+            feedback.classList.add('hidden');
+            nextBtn.classList.add('hidden');
+            while (answersContainer.firstChild) {
+                answersContainer.removeChild(answersContainer.firstChild);
+            }
+        }
+
+        function selectAnswer(isCorrect, selectedButton) {
+            if (isCorrect) {
+                score++;
+            }
+            
+            feedback.innerText = (isCorrect ? "Chính xác! " : "Chưa đúng. ") + filteredQuizData[currentQuestionIndex].explanation;
+            feedback.className = isCorrect ? 'correct' : 'incorrect';
+
+            Array.from(answersContainer.children).forEach(button => {
+                const answer = filteredQuizData[currentQuestionIndex].answers.find(ans => ans.text === button.innerText);
+                if (answer.correct) {
+                    button.classList.add('correct');
+                } else if (button === selectedButton) {
+                    button.classList.add('incorrect');
+                }
+                button.disabled = true;
+            });
+
+            feedback.classList.remove('hidden');
+            
+            if(filteredQuizData.length > currentQuestionIndex + 1) {
+                nextBtn.innerText = 'Câu tiếp theo';
+            } else {
+                nextBtn.innerText = 'Xem kết quả';
+            }
+            nextBtn.classList.remove('hidden');
+        }
+
+        function handleNextButtonClick() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < filteredQuizData.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            quizView.style.display = 'none';
+            resultView.classList.remove('hidden');
+            scoreText.innerText = `Bạn đã trả lời đúng ${score} trên ${filteredQuizData.length} câu!`;
+        }
+        
+        nextBtn.addEventListener('click', handleNextButtonClick);
+        restartBtn.addEventListener('click', () => {
+            resultView.classList.add('hidden');
+            startQuiz();
+        });
+        chapterSelect.addEventListener('change', startQuiz);
+
+        document.addEventListener('DOMContentLoaded', startQuiz);
+    </script>
+
+</body>
+</html>
